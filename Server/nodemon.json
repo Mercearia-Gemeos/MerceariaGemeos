@@ -1,0 +1,14 @@
+{
+    "env" : {
+        "MYSQL_USER" : "root",
+        "MYSQL_PASSWORD" : "root",
+        "MYSQL_DATABASE" : "merceariagemeos",
+        "MYSQL_HOST" : "localhost",
+        "MYSQL_PORT" : 3306,
+
+        "JWT_KEY" : "twins",
+        "REFRESH_JWT_KEY" : "twins2",
+        "CLI_JWT_KEY" : "gemeos",
+        "CLI_REFRESH_JWT_KEY" : "gemeos2"
+    }
+}
