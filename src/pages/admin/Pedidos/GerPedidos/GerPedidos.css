@@ -1,0 +1,153 @@
+.content {
+    min-height: 80vh !important;
+    display: flex !important;
+}
+
+.RowSmCards {
+    display: flex;
+    margin: 20px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ScrollContent{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.PedidosAdmContent {
+    overflow-x: hidden;
+    width: 1024px;
+}
+
+.TitlePedido {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-shadow: 0.1rem 0.1rem #333;
+    margin-left: 1.2rem;
+    text-align: center;
+    padding: 2px;
+    margin: auto;
+}
+
+.h1Shadow{
+    background-color: rgba(82, 82, 82, 0.1);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.7);
+    border-radius: 15px;
+}
+
+.h1DestaqueAdmPedidoConcluido {
+    font-size: 1.6rem !important;
+    color: rgb(88, 219, 132);
+    background-color: rgba(82, 82, 82, 0.1);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 15px;
+    text-decoration: underline;
+    margin-top: 2rem;
+}
+
+.h1DestaqueAdmPedidoCancelado {
+    font-size: 1.6rem !important;
+    color: rgb(245, 71, 71);
+    background-color: rgba(82, 82, 82, 0.1);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 15px;
+    text-decoration: underline;
+    margin-top: 2rem;
+}
+
+.h1DestaqueAdmPedidoAndamento {
+    font-size: 1.6rem !important;
+    color: rgb(238, 234, 23);
+    background-color: rgba(82, 82, 82, 0.1);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 15px;
+    text-decoration: underline;
+    margin-top: 2rem;
+}
+
+.filterbarPedidosAdm {
+    display: flex;
+    padding: 5px;
+    margin: 15px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.TextCategoria-linkAdm {
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 8px !important;
+}
+
+.FilterbtnGroupAdm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.FormBuscaAdm {
+    margin: 10px;
+    width: 80vw;
+}
+
+.EndScrollMsgAdm {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 20%);
+}
+
+
+.ContainerMainPedido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px;
+}
+
+.center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-self: center;
+}
+
+@media screen and (max-width: 600px) {
+    .TextCategoria-linkAdm {
+        margin: 5px;
+        font-size: 0.9rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .FormBuscaAdm {
+        margin: 10px;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .FilterbtnGroupAdm {
+        flex-direction: column;
+    }
+
+    .TextCategoria-linkAdm {
+        width: 50vw;
+    }
+}

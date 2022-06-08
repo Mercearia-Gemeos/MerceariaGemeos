@@ -1,0 +1,399 @@
+.ContainerFormPedidoGet{
+    background-color: rgba(255, 255, 255, 0.686);
+    border-radius: 15px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    padding: 30px;
+    margin: 10PX;
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+}
+
+
+
+.ContainerPedidosDetalhes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+.GetTitlePedido{
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 10px rgb(120, 120, 120);
+}
+
+.center{
+    text-align: center
+}
+
+.ContainerButtonsPedidos{
+    max-width: 1024px;
+    
+}
+
+.contentCli{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 5px;
+    margin: 20px 5px 5px 5px ;
+    background-color: rgba(255, 255, 255, 0.5);
+    
+
+}
+
+.contentListCli{
+    height: 100% !important;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius:15px;
+    font-size: 1.1rem;
+    flex-direction: column;
+    
+}
+
+.displayFormPedido{
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.displayFormPedido input{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: black;
+    background-color: transparent !important;
+    border: none !important;
+    min-width: 100%;   
+
+}
+
+
+.RowPagamentoObs{
+    flex-direction: row!important;
+    padding:15px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.FormaPagamentoDiv{
+    flex:  1  !important;
+}
+
+
+.displayFormPedidoPagamento{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: black;
+    background-color: transparent !important;
+    border: none !important;
+    min-width: 100%; 
+}
+
+.labelDisplayFormpedidoPagamento{
+    min-width: 60% !important;
+    font-weight: bold;
+}
+
+.displayFormPedidoPagamento input{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    margin-bottom: 0.5rem;
+    text-decoration: underline;
+    font-size:1.3rem;
+    display: flex;
+    text-align: center;
+}
+
+.displayFormPedidoPagamento label{
+    text-decoration: underline;
+    text-align: center;
+    padding: 5px;
+
+}
+
+.displayFormPedidoObs{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: none;
+    color: black;
+    background-color: transparent !important;
+    border: none !important;
+    min-width: 100%; 
+}
+
+.labelDisplayFormObs{
+    min-width: 40% !important;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.displayFormPedidoObs textarea {
+    background-color: transparent !important;
+    max-width: 100%;
+    min-height: 200px;
+    resize: none !important;
+    overflow-y: scroll;
+}
+
+.displayFormPedidoObs label {
+    text-decoration: underline;
+}
+
+.displayFormPedido label{
+    text-decoration: underline;
+
+}
+
+
+.labelDisplayFormpedido{
+    min-width: 40% !important;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.listCliInfoPedido{
+    font-size:1.1rem;
+    list-style: none;
+    
+}
+
+
+.dateContentPedidoDetalhe{
+    width: 300px !important;
+    height: 100% !important;
+    border-radius:15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    margin: 20px;
+    font-size: 2rem!important;
+    font-weight: bold;
+}
+
+.LinhaDeCimaTabelaAdm {
+    background-color: var(--adminDarkBlue);
+    color: #fff;
+    box-shadow: 0px 0px 5px black;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+.TotalPriceAdm{
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 3rem;
+    margin-top: 15px;
+    border: solid 1px black;
+    font-size:1.7rem;
+    background-color: var(--adminDarkBlue);
+    color: #fff;
+    box-shadow: 2px 0px 10px black;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+.ContainerFormPedidoGet{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.ContainerBtnPedidos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.ContainerBtnPedidos a{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ContainerBtnPedidos button{
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+    margin: 20px;
+    width: 30%;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px black;
+}
+
+
+.contentConcluidoSucesso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.PConcluido{
+    font-size: 18px;
+    font-weight: bold;
+    padding:5px;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.PConcluido >a,.PConcluido >a:visited{
+    color:var(--adminDarkBlue);
+}
+.PConcluido >a:hover{
+    text-decoration: none;
+    color:var(--adminDarkBlue);
+}
+
+.ContainerConcluidoSucesso{
+    border: 1px solid var(--adminDarkBlue);
+    width: 30% !important;
+    height:50vh !important;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    padding: 15px !important;
+    margin: auto;    
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    box-shadow: 2px 3px 15px black;
+}
+
+.PedidoAndamentoDiv{
+    background-color:  rgb(238, 234, 23);
+    border: solid 2px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 2px 3px 15px black;
+    padding:15px;
+    margin:30px;
+    text-align: center;
+
+}
+
+.PedidoAndamentoDiv h1{
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+
+.PedidoConcluidoDiv{
+    background-color:  rgb(88, 219, 132);
+    border: solid 2px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 2px 3px 15px black;
+    padding:15px;
+    margin:30px;
+    text-align: center;
+}
+
+.PedidoConcluidoDiv h1{
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.PedidoCanceladoDiv{
+    background-color:  rgb(245, 71, 71);
+    border: solid 2px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 2px 3px 15px black;
+    padding:15px;
+    margin:30px;
+    text-align: center;
+}
+
+.PedidoCanceladoDiv h1{
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+
+
+
+
+@media screen and (max-width: 610px){
+
+    .contentCli{
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border: none !important;
+        background-color: transparent !important;
+        border-radius: 15px;
+        margin: 0px 0px 0px 0px ;
+    
+    }
+
+
+    .displayFormPedido{
+        flex-direction: column !important;
+        align-items: center;
+        align-content: center;
+        margin-left: 4rem;
+    }
+
+
+    .displayFormPedido input{
+        flex-direction: column !important;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+    
+}
+
+
+@media screen and (max-width: 360px) {
+
+    .ContainerFormPedidoGet{
+        background-color: rgb(255, 255, 255);
+        border-radius: 15px;
+        padding: 15px;
+        margin: 5px;
+        overflow: scroll !important;
+        width: 100%;
+    }
+
+    .tabela-adm{
+        margin: 20px;
+        padding-left: 20px;
+    }
+
+}

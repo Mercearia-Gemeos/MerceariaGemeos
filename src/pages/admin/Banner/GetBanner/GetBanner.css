@@ -1,0 +1,115 @@
+.TituloBannerUpdate h1 {
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        font-size: 3.2rem;
+}
+
+.RowImgEditBanner{
+    display:flex;
+    padding: 2rem 2rem 0rem 2rem;
+    flex-direction: row-reverse;
+    margin: auto;
+    margin-bottom:2rem;
+}
+
+.ContainerExibirBanner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.ImagemExibirBanner{
+    width: 90%;
+    padding: 5px;
+    border: solid 2px rgb(57, 156, 214);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.ContainerUpdateBanner {
+    background: #fff;
+    border: solid 3px rgb(57, 156, 214);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 5px !important;
+    width: auto !important;
+    height: auto !important;
+
+}
+
+.FormUpdateBanner {
+    width: 100%;
+    height: 60%;
+    background-color: rgba(255, 255, 255, 0.686);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+    margin-top: 2rem;
+    margin-bottom: 5rem !important;
+}
+
+
+.FormBannerEdit  label{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.FormBannerEdit input, .FormBannerEdit select{
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+.labelBanner{
+    
+    margin: auto;
+    margin-right:10px;
+    margin-top: 10px;
+    width:150px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+
+.ContainerGetBanner footer {
+    max-width: 90%;
+    margin: auto;
+}
+
+
+@media (max-width: 780px) {
+
+    .RowImgEditBanner{
+
+        flex-direction: column;
+    }
+
+
+    .ContainerExibirBanner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    
+    .ImagemExibirBanner{
+        width: 90vw;
+    }
+    
+    .ContainerUpdateBanner {
+        width:30vw !important;
+    
+    }
+
+}

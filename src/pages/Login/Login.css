@@ -1,0 +1,117 @@
+.LoginPageCli{
+    width:100%;
+    background-image:  linear-gradient(
+        rgba(255, 255, 255, 0.986),
+        rgba(185, 185, 185, 0.76));
+}
+
+
+.contentLogin {
+    height: 100vh !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ContainerCliLogin{
+    border: 1px solid var(--strongRed);
+    width: 40%;
+    padding: 3%;    
+    height: 70vh !important;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    box-shadow: 2px 3px 15px black;
+    position: relative;
+}
+
+
+.CliLogin{
+    text-align: center;
+    color:rgb(0, 0, 0);
+    text-shadow: 0.1rem 0.2rem 0.3rem rgba(7, 7, 7, 0.5);
+    margin-bottom: 10px;
+}
+
+
+.formLoginCli{
+    padding: 10px;
+    width: 100% !important;
+}
+
+.form-controlCli{
+
+    border: 1px solid
+}
+
+.formLoginCli label{
+    font-weight: bold;
+}
+
+.btnLoginCli{
+    background-image: linear-gradient( rgb(231, 46, 46), rgb(242, 80, 44)) ;
+    border-radius:15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+    padding: 8px;
+    width: 100%;
+}
+
+.LinkCadastro{
+    font-weight: bold;
+    font-size: 17px;
+    margin: 2px;
+    padding: 2px;
+}
+
+.LinkCadastro a{
+    color: var(--strongRed);
+    font-size: 18px;
+}
+
+.offscreen {
+    background-color: rgba(255, 182, 193, 0);
+    color: rgba(178, 34, 34, 0);
+    font-weight: bold;
+    width: 100%;
+    border-radius: 30px 30px 3px 3px;
+    text-align: center;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.errmsg {
+    background-color: rgba(255, 182, 193, 0.593);
+    color: firebrick;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .ContainerCliLogin{
+        width: 600px !important;   
+        height: 60vh !important;
+        
+    }
+}
+
+@media screen and (max-height: 700px) {
+
+    .ContainerCliLogin{
+        width: 600px !important;   
+        height: 100vh !important;
+        overflow:scroll;  
+        
+    }
+
+}
+
