@@ -1,0 +1,14 @@
+select pedido.Id_Pedido, pedido.Id_Cli,
+cliente.Nome, cliente.Sobrenome,
+cliente.Cpf_Cli, cliente.Celular,
+cliente.Endereco, cliente.Email,
+ pedido.Data_Pedido, pedido.Data_Cancelamento,
+ pedido.Observacao, pedido.Motivo_Cancelamento,
+ pedido.Status_pedido,
+ itempedido.Id_Produto, produto.Nome_Produto,
+ itempedido.Valor, itempedido.Prod_Quantidade
+from pedido 
+join cliente, itempedido, produto 
+where pedido.Id_Pedido = itempedido.Id_Pedido
+and pedido.Id_Cli = cliente.Id_Cli
+and itempedido.Id_Produto = produto.Id_Produto;
