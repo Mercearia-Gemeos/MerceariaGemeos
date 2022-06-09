@@ -14,6 +14,16 @@ const admController = require('../controllers/admController');
 
 //-------------------------------//  Rotas  //-----------------------------//
 
+//  RETORNA PEDIDOS DENTRO DE UMA MARGEM DE TEMPO
+
+router.get("/pedidosData/:anoI/:mesI/:diaI/:anoL/:mesL/:diaL", admController.getPedidosData);
+
+
+//  RETORNA OS PRODUTOS MAIS VENDIDOS
+
+
+router.get("/maisVendidos", admController.getMaisVendidos);
+
 
 //  RETORNA A QUANTIDADE DE CLIENTES CADASTRADOS
 

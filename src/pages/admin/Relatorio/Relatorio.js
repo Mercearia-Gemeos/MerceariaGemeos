@@ -2,7 +2,7 @@ import React from "react";
 import ReactHtmlTableToExcel from "react-html-table-to-excel";
 //Blibliotecas
 
-import { Container, Table} from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
 //Bootstrap
 
 import NavbarAdm from "../../../components/admin/NavbarAdm/NavbarAdm";
@@ -37,6 +37,8 @@ function Relatorio() {
     }
     let ano = date.getFullYear();
 
+    let todayDate = `${ano}-${mes}-${dia} `
+
     //////////////////////////////////////
 
     ////////////////////////////////////
@@ -70,7 +72,7 @@ function Relatorio() {
     //--------------------------------------------------------------//
     //--------------------------------------------------------------//
 
-    /*Recebe Todos Os Dados das Categorias */
+    /*Recebe Todos Os Dados dos Produtos */
 
     const Produtos = produtos;
 
@@ -124,6 +126,56 @@ function Relatorio() {
     /*/////////////////////////////////////*/
 
     //--------------------------------------------------------------//
+    //                 Dados Dos Mais Vendidos                      //
+    //--------------------------------------------------------------//
+
+    const [maisVendidos, setMaisVendidos] = useState([]);
+
+    useEffect(() => {
+        const getmaisVendidos = async () => {
+            const res = await fetch(`http://localhost:4000/admin/maisVendidos`);
+            const data = await res.json();
+            setMaisVendidos(data);
+        };
+
+        getmaisVendidos();
+    }, []);
+
+    //--------------------------------------------------------------//
+
+    /*Recebe Todos Os Dados dos MaisVendidos */
+
+    const MaisVendidos = maisVendidos;
+
+    /*/////////////////////////////////////*/
+
+    //--------------------------------------------------------------//
+    //                 Dados Dos PedidosData                        //
+    //--------------------------------------------------------------//
+
+    const [pedidosData, setPedidosData] = useState([]);
+
+    useEffect(() => {
+        const getpedidosData = async () => {
+            const res = await fetch(
+                `http://localhost:4000/admin/pedidosData/2022/06/02/2022/06/09`
+            );
+            const data = await res.json();
+            setPedidosData(data);
+        };
+
+        getpedidosData();
+    }, []);
+
+    //--------------------------------------------------------------//
+
+    /*Recebe Todos Os Dados dos Pedidos por Data */
+
+    const PedidosData = pedidosData;
+
+    /*/////////////////////////////////////*/
+
+    //--------------------------------------------------------------//
     //                  Quantidades Das Tabelas                     //
     //--------------------------------------------------------------//
 
@@ -137,14 +189,6 @@ function Relatorio() {
     const [numberVendasTotal, setNumberVendasTotal] = useState([]);
     const [numberVendasDia, setNumberVendasDia] = useState([]);
     const [numberVendasMes, setNumberVendasMes] = useState([]);
-
-    //---------------------------------------------------------------------------//
-
-    //--------------------------------------------------------------//
-    //                  Clientes Compradores                        //
-    //--------------------------------------------------------------//
-
-    const [numberClientes, setNumberClientes] = useState([]);
 
     //---------------------------------------------------------------------------//
 
@@ -229,20 +273,6 @@ function Relatorio() {
 
         getpedidosMes();
     }, [ano, mes]);
-
-    //---------------------------------------------------------------------------//
-
-    useEffect(() => {
-        const getnumberClientes = async () => {
-            const res = await fetch(
-                `http://localhost:4000/admin/quantidadeCliente`
-            );
-            const data = await res.json();
-            setNumberClientes(data);
-        };
-
-        getnumberClientes();
-    }, []);
 
     //---------------------------------------------------------------------------//
 
@@ -353,6 +383,40 @@ function Relatorio() {
 
     //--------------------------------------------------------------//
 
+    //--------------------------------------------------------------//
+    //                                                              //
+    //                Datas de Consulta PedidosDate                 //
+    //                                                              //
+    //--------------------------------------------------------------//
+
+    const [fullDateI, setFullDateI] = useState(todayDate);
+    let fullDateIArray = fullDateI.split("-");
+
+    let anoI = fullDateIArray[0];
+    let mesI = fullDateIArray[1];
+    let diaI = fullDateIArray[2];
+
+    let date2 = fullDateI.toString()
+
+    const [fullDateL, setFullDateL] = useState(todayDate);
+
+    let fullDateLArray = fullDateL.split("-");
+
+    let anoL = fullDateLArray[0];
+    let mesL = fullDateLArray[1];
+    let diaL = fullDateLArray[2];
+
+    //--------------------------------------------------------------//
+
+    function toBrDate(usDate) {
+        const cleanDate = usDate.split("T03:00:00.000Z").reverse().join();
+        const cleanCollon = cleanDate.split(",").join("");
+        const OrderDate = cleanCollon.split("-").reverse().join("/");
+
+        let dateBr = OrderDate;
+        return dateBr;
+    }
+
     return (
         <div className="RelatorioBody ">
             <NavbarAdm />
@@ -422,12 +486,12 @@ function Relatorio() {
                     </Table>
 
                     <ReactHtmlTableToExcel
-                            className="btn btn-light btnExport"
-                            table="TableProdutos"
-                            filename={`Produtos Mercearia Gêmeos ${dia}-${mes}-${ano}`}
-                            sheet="Sheet"
-                            buttonText="Exportar Tabela Para O Excel"
-                        />
+                        className="btn btn-light btnExport"
+                        table="TableProdutos"
+                        filename={`Produtos Mercearia Gêmeos ${dia}-${mes}-${ano}`}
+                        sheet="Sheet"
+                        buttonText="Exportar Tabela Para O Excel"
+                    />
                 </div>
                 <hr />
                 <br />
@@ -469,12 +533,12 @@ function Relatorio() {
                         </tbody>
                     </Table>
                     <ReactHtmlTableToExcel
-                            className="btn btn-light btnExport"
-                            table="TableCategorias"
-                            filename={`Categorias Mercearia Gêmeos ${dia}-${mes}-${ano}`}
-                            sheet="Sheet"
-                            buttonText="Exportar Tabela Para O Excel"
-                        />
+                        className="btn btn-light btnExport"
+                        table="TableCategorias"
+                        filename={`Categorias Mercearia Gêmeos ${dia}-${mes}-${ano}`}
+                        sheet="Sheet"
+                        buttonText="Exportar Tabela Para O Excel"
+                    />
                 </div>
                 <hr />
                 <br />
@@ -514,16 +578,16 @@ function Relatorio() {
                         </tbody>
                     </Table>
                     <ReactHtmlTableToExcel
-                            className="btn btn-light btnExport"
-                            table="TableBanners"
-                            filename={`Banners Mercearia Gêmeos ${dia}-${mes}-${ano}`}
-                            sheet="Sheet"
-                            buttonText="Exportar Tabela Para O Excel"
-                        />
+                        className="btn btn-light btnExport"
+                        table="TableBanners"
+                        filename={`Banners Mercearia Gêmeos ${dia}-${mes}-${ano}`}
+                        sheet="Sheet"
+                        buttonText="Exportar Tabela Para O Excel"
+                    />
                 </div>
                 <hr />
                 <br />
-                <h1 className="TablesTitle">Pedidos</h1>
+                <h1 className="TablesTitle">Quantidade de Pedidos</h1>
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"
@@ -578,6 +642,98 @@ function Relatorio() {
                 </div>
                 <hr />
                 <br />
+                <fieldset className="PedidosDateTitle">
+                    <hr />
+                    <label htmlFor="dataInicio">
+                        <h1>Pedidos Entre</h1>
+                    </label>
+                    <input
+                        type="date"
+                        id="dataInicio"
+                        
+                        onChange={(e) => {
+                            setFullDateI(e.target.value);
+                        }}
+                    />
+                    
+                    <label htmlFor="dataLimite">
+                        <h1> - </h1>
+                    </label>
+                    <input
+                        type="date"
+                        id="dataLimite"
+                        onChange={(e) => {
+                            setFullDateL(e.target.value);
+                        }}
+                    />
+                    <hr />
+                </fieldset>
+                <div className="tableScrollDiv">
+                    <Table
+                        className="TableRelatorio"
+                        striped
+                        bordered
+                        hover
+                        size="sm"
+                        id="TablePedidos"
+                    >
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Cliente</th>
+                                <th>Cpf Do Cliente</th>
+                                <th>Data do Pedido</th>
+                                <th>Status</th>
+                                <th>Observações</th>
+                                <th>Data do Cancelamento</th>
+                                <th>Motivo Do Cancelamento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {PedidosData.map((item, idx) => (
+                                <tr key={idx}>
+                                    <td>
+                                        <b> {item.Id_Pedido}</b>{" "}
+                                    </td>
+                                    <td>
+                                        {item.Nome} {item.Sobrenome}{" "}
+                                    </td>
+                                    <td>{item.Cpf_Cli} </td>
+                                    <td>{toBrDate(item.Data_Pedido)} </td>
+                                    {item.Status_pedido === 1 && (
+                                        <td>Em Andamento</td>
+                                    )}
+                                    {item.Status_pedido === 2 && (
+                                        <td>Concluído</td>
+                                    )}
+                                    {item.Status_pedido === 3 && (
+                                        <td>Cancelado</td>
+                                    )}
+                                    <td>{item.Observacao} </td>
+                                    <td>
+                                        {`${
+                                            item.Data_Cancelamento
+                                                ? toBrDate(
+                                                    item.Data_Cancelamento
+                                                )
+                                                : ""
+                                        }`}{" "}
+                                    </td>
+                                    <td>{item.Motivo_Cancelamento} </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+                    <ReactHtmlTableToExcel
+                        className="btn btn-light btnExport"
+                        table="TablePedidos"
+                        filename={`Pedidos Mercearia Gêmeos ${dia}-${mes}-${ano}`}
+                        sheet="Sheet"
+                        buttonText="Exportar Tabela Para O Excel"
+                    />
+                </div>
+                <hr />
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio "
@@ -596,12 +752,12 @@ function Relatorio() {
                         <tbody>
                             <tr>
                                 <td>
-                                {NumberPedidosDia?.quantidade
+                                    {NumberPedidosDia?.quantidade
                                         ? NumberPedidosDia.quantidade
                                         : 0}
                                 </td>
                                 <td>
-                                {NumberPedidosMes?.quantidade
+                                    {NumberPedidosMes?.quantidade
                                         ? NumberPedidosMes.quantidade
                                         : 0}
                                 </td>
@@ -646,18 +802,20 @@ function Relatorio() {
                         <tbody>
                             <tr>
                                 <td>
-                                {NumberVendasDia?.quantidade
+                                    {NumberVendasDia?.quantidade
                                         ? NumberVendasDia.quantidade
                                         : 0}
                                 </td>
                                 <td>
-                                {NumberVendasMes?.quantidade
+                                    {NumberVendasMes?.quantidade
                                         ? NumberVendasMes.quantidade
                                         : 0}
                                 </td>
-                                <td>{NumberVendasTotal?.quantidade
+                                <td>
+                                    {NumberVendasTotal?.quantidade
                                         ? NumberVendasTotal.quantidade
-                                        : 0}</td>
+                                        : 0}
+                                </td>
                             </tr>
                         </tbody>
                     </Table>
@@ -701,6 +859,50 @@ function Relatorio() {
                         </tbody>
                     </Table>
                 </div>
+                <hr />
+                <br />
+                <h1 className="TablesTitle">Mais Vendidos</h1>
+                <div className="tableScrollDiv">
+                    <Table
+                        className="TableRelatorio"
+                        striped
+                        bordered
+                        hover
+                        size="sm"
+                        id="TableMaisVendidos"
+                    >
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Produto</th>
+                                <th>Valor Da Unidade</th>
+                                <th>Quantidade Vendida</th>
+                                <th>Lucro Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {MaisVendidos.map((item, idx) => (
+                                <tr key={idx}>
+                                    <td>
+                                        <b> {`${idx + 1}º`}</b>{" "}
+                                    </td>
+                                    <td>{item.nome_produto} </td>
+                                    <td>R$ {item.valor} </td>
+                                    <td>{item.qts_vendidos} </td>
+                                    <td>R$ {item.total_vendido} </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+                    <ReactHtmlTableToExcel
+                        className="btn btn-light btnExport"
+                        table="TableMaisVendidos"
+                        filename={`MaisVendidos Mercearia Gêmeos ${dia}-${mes}-${ano}`}
+                        sheet="Sheet"
+                        buttonText="Exportar Tabela Para O Excel"
+                    />
+                </div>
+
                 <div className="btnImprimirDiv">
                     <button
                         className="btnImprimir .noprint"

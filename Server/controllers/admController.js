@@ -2,7 +2,6 @@ const mysql = require("../mysql").pool;
 const bcrypt = require("bcrypt");
 require("dotenv").config();
 
-
 // RETORNA TODOS OS  ADMINISTRADORES
 
 exports.getAll = (req, res, next) => {
@@ -28,7 +27,6 @@ exports.getAll = (req, res, next) => {
     });
 };
 
-
 //  RETORNA QUANTIDADE DE PRODUTOS VENDIDOS NO TOTAL
 
 exports.getQtdVendas = (req, res) => {
@@ -42,7 +40,93 @@ exports.getQtdVendas = (req, res) => {
             as quantidade 
             from itempedido 
             join pedido 
-            where itempedido.Id_Pedido = pedido.Id_Pedido;`,
+            where itempedido.Id_Pedido = pedido.Id_Pedido
+            and pedido.status_pedido = 2;`,
+            (error, resultado) => {
+                conn.release();
+                if (error) {
+                    return res.status(500).send({ error: error });
+                }
+                return res.status(200).send(resultado);
+            }
+        );
+    });
+};
+
+
+//  RETORNA OS PRODUTOS MAIS VENDIDOS
+
+exports.getMaisVendidos = (req, res) => {
+    mysql.getConnection((error, conn) => {
+        if (error) {
+            return res.status(500).send({ error: error });
+        }
+        conn.query(
+            `SELECT
+
+            produto.nome_produto,
+            itempedido.valor,
+            sum(itempedido.prod_quantidade) AS qts_vendidos,
+            sum(itempedido.valor * itempedido.prod_quantidade) AS total_vendido
+            
+            FROM produto
+            
+            JOIN itempedido ON produto.id_produto = itempedido.id_produto
+            JOIN pedido ON pedido.id_pedido = itempedido.id_pedido
+            
+            where pedido.status_pedido = 2
+            
+            GROUP BY
+            
+            itempedido.id_produto,
+            produto.nome_produto,
+            itempedido.valor
+            
+            ORDER BY
+            
+            qts_vendidos desc;`,
+            (error, resultado) => {
+                conn.release();
+                if (error) {
+                    return res.status(500).send({ error: error });
+                }
+                return res.status(200).send(resultado);
+            }
+        );
+    });
+};
+
+
+
+//  RETORNA PEDIDOS DENTRO DE UMA MARGEM DE TEMPO
+
+exports.getPedidosData = (req, res) => {
+    let anoI = req.params.anoI;
+    let mesI = req.params.mesI;
+    let diaI = req.params.diaI;
+
+    let anoL = req.params.anoL;
+    let mesL = req.params.mesL;
+    let diaL = req.params.diaL;
+
+    mysql.getConnection((error, conn) => {
+        if (error) {
+            return res.status(500).send({ error: error });
+        }
+        conn.query(
+            `select pedido.Id_Pedido, pedido.Id_Cli,
+            cliente.Nome, cliente.Sobrenome,
+            cliente.Cpf_Cli,
+            pedido.Data_Pedido, pedido.Data_Cancelamento,
+            pedido.Observacao, pedido.Motivo_Cancelamento,
+            pedido.Status_pedido
+            from pedido 
+            join cliente
+            on pedido.Id_Cli = cliente.Id_Cli
+            
+            where pedido.Data_pedido between "${anoI}-${mesI}-${diaI}" and "${anoL}-${mesL}-${diaL}"
+            order by pedido.Id_Pedido;`,
+            [req.body.ano, req.body.mes, req.body.dia],
             (error, resultado) => {
                 conn.release();
                 if (error) {
@@ -58,9 +142,9 @@ exports.getQtdVendas = (req, res) => {
 //  RETORNA QUANTIDADE DE PRODUTOS VENDIDOS NO DIA
 
 exports.getQtdVendasDia = (req, res) => {
-    let ano = req.params.ano
-    let mes = req.params.mes
-    let dia = req.params.dia
+    let ano = req.params.ano;
+    let mes = req.params.mes;
+    let dia = req.params.dia;
     mysql.getConnection((error, conn) => {
         if (error) {
             return res.status(500).send({ error: error });
@@ -71,7 +155,8 @@ exports.getQtdVendasDia = (req, res) => {
             as quantidade 
             from itempedido 
             join pedido 
-            where itempedido.Id_Pedido = pedido.Id_Pedido 
+            where itempedido.Id_Pedido = pedido.Id_Pedido
+            and pedido.status_pedido = 2 
             and pedido.Data_Pedido like "${ano}-${mes}-${dia}";`,
             [req.body.ano, req.body.mes, req.body.dia],
             (error, resultado) => {
@@ -89,8 +174,8 @@ exports.getQtdVendasDia = (req, res) => {
 //  RETORNA QUANTIDADE DE PRODUTOS VENDIDOS NO MÊS
 
 exports.getQtdVendasMes = (req, res) => {
-    let ano = req.params.ano
-    let mes = req.params.mes
+    let ano = req.params.ano;
+    let mes = req.params.mes;
     mysql.getConnection((error, conn) => {
         if (error) {
             return res.status(500).send({ error: error });
@@ -101,7 +186,8 @@ exports.getQtdVendasMes = (req, res) => {
             as quantidade 
             from itempedido 
             join pedido 
-            where itempedido.Id_Pedido = pedido.Id_Pedido 
+            where itempedido.Id_Pedido = pedido.Id_Pedido
+            and pedido.status_pedido = 2 
             and pedido.Data_Pedido like "${ano}-${mes}%";`,
             [req.body.ano, req.body.mes],
             (error, resultado) => {
@@ -114,7 +200,6 @@ exports.getQtdVendasMes = (req, res) => {
         );
     });
 };
-
 
 //  RETORNA OS DADOS DE UM ADMINISTRADOR
 
@@ -137,13 +222,12 @@ exports.getOne = (req, res) => {
     });
 };
 
-
 // INSERE UM ADMINISTRADOR
 
 exports.addNew = (req, res, next) => {
     mysql.getConnection((err, conn) => {
         if (err) {
-            return res.status(500).send({ error: error });
+            return res.status(500).send({ error: err });
         }
         conn.query(
             "SELECT * FROM administrador WHERE Login = ?",
@@ -169,14 +253,14 @@ exports.addNew = (req, res, next) => {
                                         .status(500)
                                         .send({ error: error });
                                 }
-                                response = {
+                                results = {
                                     mensagem:
                                         "Administrador Inserido com sucesso",
                                     AdminCriado: {
                                         Id_Admin: results.insertId,
                                     },
                                 };
-                                return res.status(201).send(response);
+                                return res.status(201).send(results);
                             }
                         );
                     });
@@ -185,7 +269,6 @@ exports.addNew = (req, res, next) => {
         );
     });
 };
-
 
 //  ALTERA UM ADMINISTRADOR
 
@@ -215,7 +298,6 @@ exports.update = (req, res, next) => {
     });
 };
 
-
 //  RETORNA O NÚMERO DE CLIENTES CADASTRADOS
 
 exports.getQtdCliente = (req, res, next) => {
@@ -237,7 +319,6 @@ exports.getQtdCliente = (req, res, next) => {
         );
     });
 };
-
 
 //  DELETA UM ADMINISTRADOR
 
