@@ -149,31 +149,6 @@ function Relatorio() {
 
     /*/////////////////////////////////////*/
 
-    //--------------------------------------------------------------//
-    //                 Dados Dos PedidosData                        //
-    //--------------------------------------------------------------//
-
-    const [pedidosData, setPedidosData] = useState([]);
-
-    useEffect(() => {
-        const getpedidosData = async () => {
-            const res = await fetch(
-                `http://localhost:4000/admin/pedidosData/2022/06/02/2022/06/09`
-            );
-            const data = await res.json();
-            setPedidosData(data);
-        };
-
-        getpedidosData();
-    }, []);
-
-    //--------------------------------------------------------------//
-
-    /*Recebe Todos Os Dados dos Pedidos por Data */
-
-    const PedidosData = pedidosData;
-
-    /*/////////////////////////////////////*/
 
     //--------------------------------------------------------------//
     //                  Quantidades Das Tabelas                     //
@@ -390,17 +365,28 @@ function Relatorio() {
     //--------------------------------------------------------------//
 
     const [fullDateI, setFullDateI] = useState(todayDate);
-    let fullDateIArray = fullDateI.split("-");
+
+    let fullDateISpace = fullDateI.split(" ");
+
+    let fullDateINoSpace = fullDateISpace[0];
+
+    let fullDateIArray = fullDateINoSpace.split("-");
 
     let anoI = fullDateIArray[0];
     let mesI = fullDateIArray[1];
     let diaI = fullDateIArray[2];
 
-    let date2 = fullDateI.toString()
+
+    //--------------------------------------------------------------//
+
 
     const [fullDateL, setFullDateL] = useState(todayDate);
 
-    let fullDateLArray = fullDateL.split("-");
+    let fullDateLSpace = fullDateL.split(" ");
+
+    let fullDateLNoSpace = fullDateLSpace[0];
+
+    let fullDateLArray = fullDateLNoSpace.split("-");
 
     let anoL = fullDateLArray[0];
     let mesL = fullDateLArray[1];
@@ -416,6 +402,32 @@ function Relatorio() {
         let dateBr = OrderDate;
         return dateBr;
     }
+
+        //--------------------------------------------------------------//
+    //                 Dados Dos PedidosData                        //
+    //--------------------------------------------------------------//
+
+    const [pedidosData, setPedidosData] = useState([]);
+
+    useEffect(() => {
+        const getpedidosData = async () => {
+            const res = await fetch(
+                `http://localhost:4000/admin/pedidosData/${anoI}/${mesI}/${diaI}/${anoL}/${mesL}/${diaL}`
+            );
+            const data = await res.json();
+            setPedidosData(data);
+        };
+
+        getpedidosData();
+    }, [anoI, anoL, diaI, diaL, mesI, mesL]);
+
+    //--------------------------------------------------------------//
+
+    /*Recebe Todos Os Dados dos Pedidos por Data */
+
+    const PedidosData = pedidosData;
+
+    /*/////////////////////////////////////*/
 
     return (
         <div className="RelatorioBody ">
@@ -650,7 +662,7 @@ function Relatorio() {
                     <input
                         type="date"
                         id="dataInicio"
-                        
+                        Value={`${anoI}-${mesI}-${diaI}`}
                         onChange={(e) => {
                             setFullDateI(e.target.value);
                         }}
@@ -662,6 +674,7 @@ function Relatorio() {
                     <input
                         type="date"
                         id="dataLimite"
+                        Value={`${anoL}-${mesL}-${diaL}`}
                         onChange={(e) => {
                             setFullDateL(e.target.value);
                         }}
