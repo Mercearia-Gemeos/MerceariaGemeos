@@ -1,0 +1,189 @@
+.MainPedidoCli{
+    min-height: 85vh;
+}
+.FooterPedido{
+    width: 100%;
+    min-width: 100%;
+    color: #fff;
+    position: fixed;
+
+}
+
+.ContainerPedidoFilho {
+    display: flex;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+
+}
+
+.CarrinhoDeCompraPedidoFilho {
+    width: 100%;
+    height: 100%;
+}
+
+.CarrinhoDeCompraPedido {
+    margin: 40px;
+    width: 50%;
+    max-height: 70vh;
+    overflow-y: scroll;
+    margin-top: 2rem !important;
+    font-weight: bold;
+
+}
+
+.containerTotalPrice{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TotalPrice{
+    border: solid 1px black;
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 80%;
+    font-size:1.7rem;
+    background-color: #BE1600;
+    color: #fff;
+    box-shadow: 2px 0px 10px black;
+}
+
+.textAreaObs{
+    resize: none;
+    height:15vh;
+    padding: 5px;
+    padding-bottom: 20px;
+}
+
+.FooterPedidoT{
+    position: fixed;
+}
+.TabelaCarrinho{
+    margin: auto;
+}
+.Formularia {
+    margin: 10px;
+    width: 50%;
+    margin-top: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PedidoConcluido{
+    margin: 10px;
+    width: 50%;
+    margin-top: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: solid 2px var(--strongRed);
+    border-radius:15px;
+    box-shadow: 1px 1px 10px black;
+}
+
+.PedidoConcluidoText{
+    font-size:1.2rem;
+}
+
+.PedidoConcluidoLink, .PedidoConcluidoLink:visited{
+    font-size:1.2rem;
+    color: var(--strongRed)
+}
+
+.PedidoConcluidoLink:hover{
+    font-size:1.2rem;
+    color: var(--strongRedHover)
+}
+
+.linhaTabela {
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.footerTable{
+    display:flex;
+}
+
+.ColunaCarrinho {
+    margin: 10px;
+    padding: 10px;
+    border: solid 1px #000;
+    box-shadow: 0px 0px 5px black;
+}
+
+.LinhaDeCimaTabela {
+    background-color: #BE1600;
+    color: #fff;
+    box-shadow: 0px 0px 5px black;
+}
+
+.linhaTabela {
+    text-align: center;
+}
+
+.ColunaCarrinho {
+    width: 180px;
+    text-align: center;
+}
+
+.ItensDoCarrinhoDeCompra {
+    font-size: 28px;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 2rem;
+}
+.ControleTamanhoButton{
+    width: 80%;
+}
+
+
+@media screen and (max-width: 852px) {
+    .CarrinhoDeCompraPedido {
+        max-height: 45vh;
+    }
+}
+
+@media screen and (max-width: 778px) {
+        .containerPedidoCliente{
+            height: 100%;
+        }
+        .ContainerPedidoFilho{
+            flex-direction: column;
+            justify-content: center;
+        }
+        .CarrinhoDeCompraPedido{
+            overflow: none;
+            max-height: 100% !important;
+            height: 100% !important;
+            width: 80vw;
+            margin: auto;
+        }
+        .Formularia{
+            width: 80% !important;
+            margin: none !important;
+            margin: auto;
+            padding-top: 30px;
+        }
+        .FooterCliPedido{
+            position: fixed;
+        }
+}
+
+@media screen and (max-width:500px){
+    
+    .CarrinhoDeCompraPedido{
+        width: 100vw !important;
+        margin: 0 !important;
+    }
+
+}
+

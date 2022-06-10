@@ -1,0 +1,89 @@
+.LoginUser{
+    height: 100vh !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:  linear-gradient(
+        rgba(29, 114, 194, 0.986),
+        rgba(255, 255, 255, 0.76));
+}
+.ContainerLogin{
+    width: 40%;
+    padding: 3%;    
+    height: 70vh !important;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+}
+.AdmLogin{
+    text-align: center;
+    font-weight: bold;
+    color:rgb(0, 0, 0);
+    text-shadow: 0.1rem 0.2rem 0.3rem rgba(29, 114, 194, 0.5);
+}
+
+.btnLoginDiv{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.formLoginAdm{
+    padding: 10px;
+}
+
+.formLoginAdm label{
+    font-weight: bold;
+}
+
+.btnLoginAdm{
+    background-image: linear-gradient( rgb(1, 1, 150), rgb(20, 20, 87)) ;
+    border-radius:15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+    padding: 8px;
+    width: 100%;
+}
+
+.offscreen {
+    background-color: rgba(255, 182, 193, 0);
+    color: rgba(178, 34, 34, 0);
+    font-weight: bold;
+    width: 100%;
+    border-radius: 30px 30px 3px 3px;
+    text-align: center;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.errmsg {
+    background-color: rgba(255, 182, 193, 0.593);
+    color: firebrick;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+@media screen and (max-width: 800px) {
+    .ContainerLogin{
+        width: 75%;
+    }
+}
+@media screen and (max-width: 400px){
+    .ContainerLogin{
+        width: 100%;
+
+    }
+    .LoginUser{
+        background-color: none;
+    }
+}

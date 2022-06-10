@@ -1,0 +1,38 @@
+.cardEquipe{
+    height: 10rem;
+    background-color: white;
+    background-image: linear-gradient(white, rgba(195, 195, 195, 0.452));
+    border: 2px solid var(--strongRed);
+    border-radius:15px;
+    box-shadow: 4px 4px 10px black;
+    margin: 15px;
+    padding: 5px;
+    position: relative;
+}
+
+
+.cardEquipeTitle{
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 10px;
+    padding: 1px;
+}
+
+.cardEquipeRole{
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgb(81, 81, 81);
+    text-decoration: line;
+    margin: 1px;
+    padding: 1px;
+}
+
+.cardEquipeSocials{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 96%;
+    align-items: flex-end;
+    justify-content: space-around;
+    position: absolute;
+    top: 80%;
+}

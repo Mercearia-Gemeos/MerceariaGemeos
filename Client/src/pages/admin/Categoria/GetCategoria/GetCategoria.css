@@ -1,0 +1,68 @@
+.MainGetCategoria {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.FormCategoiraContainer {
+    width: 50%;
+    height: 60%;
+    background-color: rgba(255, 255, 255, 0.686);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 30px;
+}
+
+.FormCategoiraContainer input {
+    margin-top: 5px ;
+}
+
+.FormCategoiraContainer label {
+    margin-top: 5px ;
+}
+
+.IconeEditar{
+    display: flex;
+    margin-left: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius:30px;
+}
+
+.mgUp{
+    margin-top: 25px;
+}
+
+.JuntarLabelIcon {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.InputFormCat {
+    width: 100% !important;
+}
+
+.LabelCategoria {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.TitleCategoria {
+    text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+    .FormCategoiraContainer {
+        height: 80%;
+        width: 80%;
+    }
+}   
+
+@media screen and (max-width: 313px) {
+    .mgUp{
+        margin-top: 45px;
+    }
+}  

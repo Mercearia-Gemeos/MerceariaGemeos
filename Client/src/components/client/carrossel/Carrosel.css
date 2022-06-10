@@ -1,0 +1,88 @@
+.Container-carrousel-section{
+    max-width: 90vw !important;
+    width: 100% !important;
+    height: auto;
+
+}
+.Container-car {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth !important;
+    animation-delay: 3s !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0rem 2rem 0rem 2rem;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    margin-top: 1rem!important;
+}
+
+.Container-car::-webkit-scrollbar {
+    display: none;
+}
+
+.buttons-carousel{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -200px;
+    
+}
+.buttons-carousel button{
+    background-color: transparent;
+    border: none;
+    cursor:  pointer;
+
+}
+.buttons-carousel button:first-child img{
+    transform: rotate(180deg);
+    color: (--darkRed );
+}
+.right-scroll{
+    margin-right:-50px;
+}
+.left-scroll{
+    margin-left: -50px;
+}
+
+@media screen and (max-width: 1024px) {
+    .right-scroll{
+        margin-right: 0px !important;
+    }
+    .left-scroll{
+        margin-left: 0px !important;
+    }
+    .Container-carrousel-section{
+    
+    }
+    .Container-car{
+        margin: 0;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .Container-car {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth !important;
+        animation-delay: 3s !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0rem 0rem 0rem 0rem;
+        width: 100%;
+        border: 0px solid rgba(0, 0, 0, 0.2);
+        border-radius: 2rem;
+        margin-top: 1rem!important;
+    }
+    
+}

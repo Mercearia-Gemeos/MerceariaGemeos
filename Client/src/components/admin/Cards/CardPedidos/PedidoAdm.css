@@ -1,0 +1,95 @@
+
+.cardPedidoAdm{
+    border-radius:15px;
+    margin: 15px;
+    box-shadow: 1px 1px 10px black;
+
+}
+
+.cardNumber {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cardName {
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    text-transform: capitalize;
+    
+}
+
+
+.cardEndereco {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    
+}
+
+.cardDate {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--adminDarkBlue)
+
+}
+
+
+
+
+/*Botões do card*/
+
+.btnAdm,.btnAdm:visited{
+    display: flex;
+    margin: auto;
+    outline: 0 !important;
+    width:5rem !important;
+    height:1.7rem !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.RowEditbtn{
+    justify-content: center;
+}
+
+.idProductInvInput{
+    display: none;
+}
+
+
+.btnAdmEditar, .btnAdmEditar:visited{
+    background-color: rgb(255, 203, 34)  !important;
+    border-color: rgba(0, 0, 0, 0.384) !important;
+    color:white !important;
+}
+
+/*Botões dos cards ao ter o mouse sobre o mesmo*/
+
+
+.btnAdmEditar:hover{
+    background-color: rgb(255, 153, 0) !important;
+}

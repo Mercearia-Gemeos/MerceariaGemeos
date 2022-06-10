@@ -1,0 +1,85 @@
+
+/*Definição da Camada do Card como um todo*/
+.Card-container{
+    z-index: 0 !important;
+}
+
+/* margem do card como um todo(Entre si e o conteúdo) */
+.cardCli{
+    margin-top: 20px ;
+}
+
+
+
+/*Borda do card (A Em vermelho)*/
+.cardProd{
+    margin: 1rem;
+    border-radius: 30px;
+}
+
+/*Corpo Interno Do Card*/
+.cardBody{
+    position: relative;
+}
+
+/*Imagem Do Card*/
+.cardImg{
+    width:80%;
+    margin: 1rem 0rem 0rem 1.5rem;
+}
+
+/*Título Do Card*/
+.cardTitle {
+    display: flex;
+    font-size: 1.4rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*Descrição Do Card*/
+
+.cardDesc {
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Valor Do Card*/
+.cardValor{
+    color: var(--strongRed);
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Botão de Comprar do card*/
+
+.btnCarrinho,.btnCarrinho:visited{
+    display: flex;
+    margin: auto;
+    font-size: 13px;
+    background-color: var(--strongRed)  !important;
+    border-color: transparent !important;
+    outline: 0 !important;
+}
+
+
+
+/*Botão de Comprar do card ao ter o mouse sobre o mesmo*/
+.btnCarrinho:hover{
+    background-color: var(--strongRedHover) !important;
+}
+
+.btnNoLogin, .btnNoLogin:hover{
+    background-color: rgb(183, 94, 94) !important;
+}

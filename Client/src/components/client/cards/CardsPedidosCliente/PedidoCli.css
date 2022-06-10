@@ -1,0 +1,117 @@
+
+.cardPedidoCli{
+    border-radius:15px;
+    margin: 15px;
+    box-shadow: 1px 1px 10px black;
+
+}
+
+
+.statusPedido{
+    border: solid 1px;
+    width:2%;
+    height: 10%;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 1px 1px 1px black;
+}
+
+.statusConcluido{
+    background-color:rgb(34, 245, 104);
+    background-image: linear-gradient(rgb(58, 174, 29),rgb(139, 243, 194));
+}
+
+.statusAndamento{
+    background-image: linear-gradient(rgb(226, 155, 22),rgb(238, 234, 23));
+}
+
+.statusCancelado{
+    background-image: linear-gradient( rgb(254, 34, 34),rgb(237, 183, 183));
+}
+
+.cardNumber {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cardName {
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    text-transform: capitalize;
+    
+}
+
+
+.cardEndereco {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    
+}
+
+.cardDate {
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: var(--darkRed)
+}
+
+
+
+
+/*Botões do card*/
+
+.btnCli,.btnCli:visited{
+    display: flex;
+    margin: auto;
+    outline: 0 !important;
+    width:5rem !important;
+    height:1.7rem !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+.RowEditbtn{
+    justify-content: center;
+}
+
+.idProductInvInput{
+    display: none;
+}
+
+
+.btnCliEditar, .btnCliEditar:visited{
+    background-color: rgb(255, 203, 34)  !important;
+    border-color: rgba(0, 0, 0, 0.384) !important;
+    color:white !important;
+}
+
+/*Botões dos cards ao ter o mouse sobre o mesmo*/
+
+
+.btnCliEditar:hover{
+    background-color: rgb(255, 153, 0) !important;
+}
