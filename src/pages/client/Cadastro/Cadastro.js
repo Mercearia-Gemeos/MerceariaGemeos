@@ -14,6 +14,7 @@ import FooterCli from "../../../components/client/footer/FooterCli";
 import NavbarPrincipal from "../../../components/client/navbars/navbar-principal/NavbarPrincipal";
 import NavbarEstatico from "../../../components/client/navbars/navbar-estatico/NavbarEstatico";
 import { Link } from "react-router-dom";
+import { cpfMask } from "../../../components/Maks/cpfMaks";
 //Componentes
 
 import "./Cadastro.css";
@@ -233,12 +234,13 @@ function Cadastro() {
                                         <Form.Control
                                             type="text"
                                             placeholder="xxx.xxx.xxx-xx"
-                                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                                            //pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
                                             required
                                             maxLength="14"
                                             className="formCadInput"
+                                            value={cpfCli}
                                             onChange={(e) => {
-                                                setCpf(e.target.value);
+                                                setCpf(cpfMask(e.target.value));
                                             }}
                                         />
                                         <Form.Control.Feedback type="invalid">
