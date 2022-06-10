@@ -106,6 +106,7 @@ function Cadastro() {
         }
         setValidated(true);
     };
+
     return (
         <div>
             <NavbarEstatico />
@@ -388,6 +389,7 @@ function Cadastro() {
                                             pattern="\d{0}\(\d{2}\)\d{5}-\d{4}"
                                             required
                                             maxLength="14"
+                                            id="telefone"
                                             className="formCadInput"
                                             onChange={(e) => {
                                                 setCelular(e.target.value);
@@ -489,6 +491,7 @@ function Cadastro() {
                                             placeholder="00000-000"
                                             required
                                             maxLength="9"
+                                            id="cep"
                                             onChange={(e) => {
                                                 setCep(e.target.value);
                                             }}

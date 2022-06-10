@@ -1,7 +1,7 @@
 {
     "env" : {
         "MYSQL_USER" : "root",
-        "MYSQL_PASSWORD" : "root",
+        "MYSQL_PASSWORD" : "123456",
         "MYSQL_DATABASE" : "merceariagemeos",
         "MYSQL_HOST" : "localhost",
         "MYSQL_PORT" : 3306,
