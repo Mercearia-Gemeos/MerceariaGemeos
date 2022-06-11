@@ -39,7 +39,7 @@ function GetProdutos(idProd) {
         };
 
         getProd();
-    },[]);
+    },[idProd]);
 
     //--------------------------------------------------------------//
     //--------------------------------------------------------------//
@@ -359,7 +359,7 @@ function GetProdutos(idProd) {
     return (
         <section className="DetalhesProdutos">
             <NavbarAdm />
-            <main className="adm">
+            <main className="admGer">
                 {/* 
 
     ////////////////////////////////////////////////////////////////////////////
