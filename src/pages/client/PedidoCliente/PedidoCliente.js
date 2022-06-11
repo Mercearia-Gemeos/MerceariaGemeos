@@ -221,7 +221,7 @@ function PedidoCliente() {
                                                                 <td className="ColunaCarrinho">
                                                                     R$
                                                                     {item.Valor *
-                                                                        item.Quantidade}{" "}
+                                                                        item.Quantidade.toFixed(2)}{" "}
                                                                 </td>
                                                             </tr>
                                                         )

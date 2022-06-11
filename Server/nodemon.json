@@ -1,10 +1,11 @@
 {
     "env" : {
         "MYSQL_USER" : "root",
-        "MYSQL_PASSWORD" : "123456",
+        "MYSQL_PASSWORD" : "root",
         "MYSQL_DATABASE" : "merceariagemeos",
         "MYSQL_HOST" : "localhost",
         "MYSQL_PORT" : 3306,
+
 
         "JWT_KEY" : "twins",
         "REFRESH_JWT_KEY" : "twins2",

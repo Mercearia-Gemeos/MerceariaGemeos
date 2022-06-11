@@ -288,7 +288,7 @@ function GetPedido() {
                                                 <td className="ColunaCarrinho">
                                                     R$
                                                     {item.Valor *
-                                                        item.Prod_Quantidade}{" "}
+                                                        item.Prod_Quantidade.toFixed(2)}{" "}
                                                 </td>
                                             </tr>
                                         ))}

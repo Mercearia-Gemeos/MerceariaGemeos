@@ -480,7 +480,7 @@ function Relatorio() {
                                     <td>{item.Id_Categoria}</td>
                                     <td>{item.Nome_Produto}</td>
                                     <td>{item.Descricao}</td>
-                                    <td>{item.Valor}</td>
+                                    <td>R$ {item.Valor}</td>
                                     <td>
                                         {item.Em_Oferta === 0 ? "Não" : "Sim"}
                                     </td>
