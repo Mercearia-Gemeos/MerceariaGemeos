@@ -54,6 +54,12 @@
     text-align: center;
 }
 
+.editCateg{
+    color:rgb(35, 35, 35) !important;
+    text-shadow: 1px 1px 1px white !important;
+    
+}
+
 @media screen and (max-width: 700px) {
     .FormCategoiraContainer {
         height: 80%;

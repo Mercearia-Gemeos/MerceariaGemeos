@@ -14,8 +14,6 @@ import NavbarAdm from "../../../../components/admin/NavbarAdm/NavbarAdm";
 import { Link } from "react-router-dom";
 
 import useGlobal from "../../../../hooks/useGlobal";
-import ReactHtmlTableToExcel from "react-html-table-to-excel";
-
 //Hooks
 
 //Componentes
@@ -134,13 +132,6 @@ function GerCategorias() {
                             </tbody>
                         </table>
 
-                        <ReactHtmlTableToExcel
-                            className="btn btn-light ButtonExportExecel"
-                            table="execel"
-                            filename="Cetegoria mercearia gemeos"
-                            sheet="Sheet"
-                            buttonText="Exportar tabela para o excel"
-                        />
                     </div>
                 </Container>
             </main>

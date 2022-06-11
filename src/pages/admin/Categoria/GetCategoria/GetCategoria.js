@@ -156,7 +156,7 @@ function GetCategoria(idCateg) {
             <main className="admGer ">
                 <div className="MainGetCategoria">
                     <div className="FormCategoiraContainer">
-                        <h1 className="TitleCategoria"> Editar Categoria</h1>
+                        <h1 className="TitleCategoria editCateg"> Editar Categoria</h1>
                         <br />
                         {Categoria.map((item, idx) => (
                             <Form key={idx}>
