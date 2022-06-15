@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `merceariagemeos` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `merceariagemeos` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `merceariagemeos`;
--- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: merceariagemeos
 -- ------------------------------------------------------
--- Server version	8.0.29
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -40,7 +40,7 @@ CREATE TABLE `administrador` (
 
 LOCK TABLES `administrador` WRITE;
 /*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` VALUES (1,'admin','$2b$10$8PQhFyrw7AZq6rJy59rjaeiUAQZzeEGOLfMjQmahT0naEQQAUrRNm','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9BZG0iOjEsIkxvZ2luIjoiYWRtaW4iLCJpYXQiOjE2NTQxOTA2OTYsImV4cCI6MTY1NDM2MzQ5Nn0.V6y7rAxNzRUVYkzXyLVuNO83hpAnBTU07ftfXoykFn0');
+INSERT INTO `administrador` VALUES (1,'admin','$2b$10$8PQhFyrw7AZq6rJy59rjaeiUAQZzeEGOLfMjQmahT0naEQQAUrRNm','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9BZG0iOjEsIkxvZ2luIjoiYWRtaW4iLCJpYXQiOjE2NTUzMzYyMzUsImV4cCI6MTY1NTUwOTAzNX0.OitHBpf0pZhKrwqweQWDudzYPxEVhfFd9j8t8-ApvZs');
 /*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +119,7 @@ CREATE TABLE `cliente` (
   `Senha` varchar(100) NOT NULL,
   `Refresh_Jwt_Key` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`Id_Cli`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +128,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES (1,'123.123.123-12','Vitor','Oliveira','Rua Oliveira 12','Paulistano','São Paulo','12345-123','SP','(11)31231-2123','vitor@gmail.com','$2b$10$5Vy1frF2uo9nYx9q/V3vKOS7pzlc2TldrNmrbAGHeVB3on/l4VPw6','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9DbGkiOjEsIkVtYWlsIjoidml0b3JAZ21haWwuY29tIiwiaWF0IjoxNjU0MTI0NjUyLCJleHAiOjE2NTQyOTc0NTJ9.Z_Jpg8--7xSWUCmJGm6sGRTp618RoDcozgUZxuey6Lc');
+INSERT INTO `cliente` VALUES (1,'123.123.123-12','Vitor','Oliveira','Rua Oliveira 12','Paulistano','São Paulo','12345-123','SP','(11)31231-2123','vitor@gmail.com','$2b$10$5Vy1frF2uo9nYx9q/V3vKOS7pzlc2TldrNmrbAGHeVB3on/l4VPw6','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9DbGkiOjEsIkVtYWlsIjoidml0b3JAZ21haWwuY29tIiwiaWF0IjoxNjU0MTI0NjUyLCJleHAiOjE2NTQyOTc0NTJ9.Z_Jpg8--7xSWUCmJGm6sGRTp618RoDcozgUZxuey6Lc'),(2,'111.222.332-22','Gabriel','Carlos','Rua das Pedras 12','Paulistano','São Paulo','2201-2121','SP','(11)92341-7654','gabriel@gmail.com','$2b$10$za1maGIDNmGYxUDo6L3Vc.fbiEyDLauIe3ChMSXzprZ3tm48Z9hP6','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9DbGkiOjIsIkVtYWlsIjoiZ2FicmllbEBnbWFpbC5jb20iLCJpYXQiOjE2NTUzMzM1MTcsImV4cCI6MTY1NTUwNjMxN30.w6JGoCxhbZ7dCvsZx1avbi3DWZK1rx-yW4_XIKmB9Es'),(3,'222.456.123-98','Igor','Gabriel','Rua Dos Coqueiros 11','Paulistano','São Paulo','2296-4545','SP','(11)95467-1234','Igor@gmail.com','$2b$10$O5EL.b0yNhK0JwL1IFGAj.duG2PfxJOR1OfGykAVI5JiXtrO6ndKO','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9DbGkiOjMsIkVtYWlsIjoiSWdvckBnbWFpbC5jb20iLCJpYXQiOjE2NTUzMzU2NTMsImV4cCI6MTY1NTUwODQ1M30.Wk9bKv3AJbTZEBTaIsgVGNRsCVUxDAYjMQBHPoJgT9k');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,7 +150,7 @@ CREATE TABLE `itempedido` (
   KEY `Id_Produto` (`Id_Produto`),
   CONSTRAINT `ItemPedido_ibfk_1` FOREIGN KEY (`Id_Pedido`) REFERENCES `pedido` (`Id_Pedido`),
   CONSTRAINT `ItemPedido_ibfk_2` FOREIGN KEY (`Id_Produto`) REFERENCES `produto` (`Id_Produto`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +159,7 @@ CREATE TABLE `itempedido` (
 
 LOCK TABLES `itempedido` WRITE;
 /*!40000 ALTER TABLE `itempedido` DISABLE KEYS */;
-INSERT INTO `itempedido` VALUES (1,1,1,4.99,1),(2,1,3,2.63,1),(3,1,6,4.99,1),(4,1,5,9.19,1),(5,2,1,4.99,3),(6,3,7,25.47,1),(7,3,11,12.42,1);
+INSERT INTO `itempedido` VALUES (1,1,1,4.99,1),(2,1,3,2.63,1),(3,1,6,4.99,1),(4,1,5,9.19,1),(5,2,1,4.99,3),(6,3,7,25.47,1),(7,3,11,12.42,1),(8,3,4,13.99,1),(9,3,9,2.41,1),(10,3,3,2.63,1),(11,3,16,6.99,1),(12,4,39,6.04,1),(13,4,34,17.49,1),(14,4,40,5.80,1),(15,5,11,12.42,2),(16,6,23,3.29,3),(17,6,24,2.79,3),(18,7,8,16.49,2),(19,7,11,12.42,1),(20,7,4,13.99,2),(21,7,3,2.63,2),(22,7,7,25.47,2);
 /*!40000 ALTER TABLE `itempedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,7 +182,7 @@ CREATE TABLE `pedido` (
   PRIMARY KEY (`Id_Pedido`),
   KEY `Id_Cli` (`Id_Cli`),
   CONSTRAINT `Pedido_ibfk_1` FOREIGN KEY (`Id_Cli`) REFERENCES `cliente` (`Id_Cli`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -191,7 +191,7 @@ CREATE TABLE `pedido` (
 
 LOCK TABLES `pedido` WRITE;
 /*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
-INSERT INTO `pedido` VALUES (1,1,'2022-05-23','Cartão',2,NULL,NULL,'cachorro bravo'),(2,1,'2022-06-01','Pix',3,'2022-06-01','rua fechada',''),(3,1,'2022-06-01','Dinheiro',2,NULL,NULL,' ');
+INSERT INTO `pedido` VALUES (1,1,'2022-05-23','Cartão',2,NULL,NULL,'cachorro bravo'),(2,1,'2022-06-01','Pix',3,'2022-06-01','rua fechada',''),(3,2,'2022-06-15','Pix',2,NULL,NULL,'2ª Campainha'),(4,2,'2022-06-15','Dinheiro',1,NULL,NULL,' '),(5,2,'2022-06-15','Pix',3,'2022-06-15','Cliente não quer mais os produtos.',' '),(6,3,'2022-06-15','Dinheiro',3,'2022-06-15','falta de morador na residência\n',' '),(7,3,'2022-06-15','Cartão',2,NULL,NULL,'nenhuma');
 /*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -237,4 +237,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-02 14:30:32
+-- Dump completed on 2022-06-15 20:42:42
