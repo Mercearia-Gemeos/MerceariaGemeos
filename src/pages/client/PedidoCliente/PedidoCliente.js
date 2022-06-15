@@ -123,7 +123,7 @@ function PedidoCliente() {
                                                         </td>
                                                     </tr>
                                                     {ItemCarrinho.map(
-                                                        (item, idx) => (
+                                                        (item, idx, valor) => (
                                                             <tr
                                                                 key={idx}
                                                                 className="linhaTabela"
@@ -141,8 +141,7 @@ function PedidoCliente() {
                                                                 </td>
                                                                 <td className="ColunaCarrinho">
                                                                     R$
-                                                                    {item.Valor *
-                                                                        item.Quantidade}{" "}
+                                                                    {valor = (item.Valor * item.Quantidade).toFixed(2) }
                                                                 </td>
                                                             </tr>
                                                         )
@@ -202,7 +201,7 @@ function PedidoCliente() {
                                                         </td>
                                                     </tr>
                                                     {ItemCarrinho.map(
-                                                        (item, idx) => (
+                                                        (item, idx, valor) => (
                                                             <tr
                                                                 key={idx}
                                                                 className="linhaTabela"
@@ -218,10 +217,10 @@ function PedidoCliente() {
                                                                         item.Quantidade
                                                                     }
                                                                 </td>
+                                                                
                                                                 <td className="ColunaCarrinho">
-                                                                    R$
-                                                                    {item.Valor *
-                                                                        item.Quantidade.toFixed(2)}{" "}
+                                                                    R$ {valor = (item.Valor * item.Quantidade).toFixed(2) }
+                                                                    
                                                                 </td>
                                                             </tr>
                                                         )

@@ -273,7 +273,7 @@ function GetPedido() {
                                                 Preço
                                             </td>
                                         </tr>
-                                        {ItemPedido.map((item, idx) => (
+                                        {ItemPedido.map((item, idx, valor) => (
                                             <tr
                                                 key={idx}
                                                 className="linhaTabela"
@@ -286,9 +286,8 @@ function GetPedido() {
                                                     {item.Prod_Quantidade}
                                                 </td>
                                                 <td className="ColunaCarrinho">
-                                                    R$
-                                                    {item.Valor *
-                                                        item.Prod_Quantidade.toFixed(2)}{" "}
+                                                    R$ 
+                                                    {valor = (item.Valor * item.Prod_Quantidade).toFixed(2) }
                                                 </td>
                                             </tr>
                                         ))}

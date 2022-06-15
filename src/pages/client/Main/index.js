@@ -164,7 +164,7 @@ function Main() {
         } else {
             setCartItems(
                 cartItems.map((x) =>
-                    x.id === product.Id_Produto
+                    x.Id_Produto === product.Id_Produto
                         ? { ...exist, Quantidade: exist.Quantidade - 1 }
                         : x
                 )
