@@ -138,6 +138,10 @@
     margin-left: 1rem;
 }
 
+.titleOffCanvasLink{
+    text-decoration: none;
+}
+
 @media screen and (max-width: 991px) {
     .container-fluid {
         padding: 0 !important;

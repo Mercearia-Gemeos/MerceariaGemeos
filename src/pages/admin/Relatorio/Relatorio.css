@@ -145,6 +145,10 @@
     text-align:center;
 }
 
+.onlyPrint{
+    display:none;
+}
+
 
 
 @media print {
@@ -154,5 +158,13 @@
 
     .btnExport{
         display: none;
+    }
+
+    .noPrint{
+        display: none;
+    }
+
+    .onlyPrint{
+        display:flex;
     }
 }

@@ -450,6 +450,7 @@ function Relatorio() {
 
             <Container className="TablesDiv">
                 <h1 className="TablesTitle">Produtos</h1>
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"
@@ -508,6 +509,7 @@ function Relatorio() {
                 <hr />
                 <br />
                 <h1 className="TablesTitle">Categorias</h1>
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"
@@ -555,6 +557,7 @@ function Relatorio() {
                 <hr />
                 <br />
                 <h1 className="TablesTitle">Banners</h1>
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"
@@ -600,6 +603,7 @@ function Relatorio() {
                 <hr />
                 <br />
                 <h1 className="TablesTitle">Quantidade de Pedidos</h1>
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"
@@ -654,7 +658,7 @@ function Relatorio() {
                 </div>
                 <hr />
                 <br />
-                <fieldset className="PedidosDateTitle">
+                <fieldset className="PedidosDateTitle noPrint">
                     <hr />
                     <label htmlFor="dataInicio">
                         <h1>Pedidos Entre</h1>
@@ -681,6 +685,9 @@ function Relatorio() {
                     />
                     <hr />
                 </fieldset>
+                <br />
+                <h1 className="TablesTitle onlyPrint">Pedidos Entre  ({diaI}/{mesI}/{anoI}) - ({diaL}/{mesL}/{anoL})</h1>
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"
@@ -836,6 +843,7 @@ function Relatorio() {
                 <hr />
                 <br />
                 <h1 className="TablesTitle">Ganhos</h1>
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"
@@ -875,6 +883,7 @@ function Relatorio() {
                 <hr />
                 <br />
                 <h1 className="TablesTitle">Mais Vendidos</h1>
+                <br />
                 <div className="tableScrollDiv">
                     <Table
                         className="TableRelatorio"

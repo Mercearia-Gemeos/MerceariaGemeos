@@ -79,14 +79,18 @@ function NavbarAdm() {
                         >
                             <Offcanvas.Title id="offcanvasNavbarLabel">
                                 <Row>
-                                    <img
-                                        src={Logo}
-                                        alt="Logotipo"
-                                        height="100px"
-                                    />
-                                    <h1 className="offcanvasAdmTitle">
-                                        Gêmeos Admin
-                                    </h1>
+                                    <Link to="/admin">
+                                        <img
+                                            src={Logo}
+                                            alt="Logotipo"
+                                            height="100px"
+                                        />
+                                    </Link>
+                                    <Link className="titleOffCanvasLink" to="/admin">
+                                        <h1 className="offcanvasAdmTitle">
+                                            Gêmeos Admin
+                                        </h1>
+                                    </Link>
                                 </Row>
                             </Offcanvas.Title>
                         </Offcanvas.Header>
