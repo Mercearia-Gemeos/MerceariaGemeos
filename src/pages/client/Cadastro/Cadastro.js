@@ -14,11 +14,15 @@ import FooterCli from "../../../components/client/footer/FooterCli";
 import NavbarPrincipal from "../../../components/client/navbars/navbar-principal/NavbarPrincipal";
 import NavbarEstatico from "../../../components/client/navbars/navbar-estatico/NavbarEstatico";
 import { Link } from "react-router-dom";
-import { cpfMask } from "../../../components/Maks/cpfMaks";
 //Componentes
 
+
+import { cpfMask } from "../../../components/Maks/cpfMaks";
+import { cepMask } from "../../../components/Maks/cepMaks";
+// Maks
 import "./Cadastro.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import createPalette from "@mui/material/styles/createPalette";
 //CSS
 
 function Cadastro() {
@@ -492,8 +496,9 @@ function Cadastro() {
                                             required
                                             maxLength="9"
                                             id="cep"
+                                            value={cep}
                                             onChange={(e) => {
-                                                setCep(e.target.value);
+                                                setCep(cepMask(e.target.value));
                                             }}
                                         />
                                     </Form.Group>
