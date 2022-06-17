@@ -303,10 +303,12 @@ function Main() {
 
                                             {/*Nav Link da Imagem do Carrinho do compras*/}
 
-                                            <div className="Container-right">
+                                            {cartItems.length === 0 &&(
+                                                <div className="Container-right ">
                                                 <Nav.Link
                                                     href="#"
-                                                    className="carrinho img-nav2"
+                                                    className="carrinho img-nav2"                                    
+                                                    data-count={cartItems.length}
                                                 >
                                                     <img
                                                         src={carrinho_compras}
@@ -316,13 +318,29 @@ function Main() {
                                                     ></img>
                                                 </Nav.Link>
                                             </div>
-
-                                            {/* Nav Link do texto do Carrinho do compras*/}
-
-                                            <div className="Container-right container-carrinho-margin">
+                                            )}
+                                            {cartItems.length !== 0 &&(
+                                                <div className="Container-right ">
                                                 <Nav.Link
                                                     href="#"
-                                                    className="carrinho TextoCarrinho-2"
+                                                    className="carrinho img-nav2 botaoCarrinho"                                    
+                                                    data-count={cartItems.length}
+                                                >
+                                                    <img
+                                                        src={carrinho_compras}
+                                                        alt="carrinho de compra"
+                                                        width="50px"
+                                                        onClick={handleShow2}
+                                                    ></img>
+                                                </Nav.Link>
+                                            </div>
+                                            )}           
+                                            {/* Nav Link do texto do Carrinho do compras*/}
+
+                                            <div className="Container-right container-carrinho-margin ">
+                                                <Nav.Link
+                                                    href="#"
+                                                    className="carrinho TextoCarrinho-2 "
                                                     onClick={handleShow2}
                                                 >
                                                     CARRINHO DE COMPRAS
@@ -331,10 +349,10 @@ function Main() {
                                         </>
                                     ) : (
                                         <>
-                                            <div className="Container-right">
+                                            <div className="Container-right ">
                                                 <Nav.Link
                                                     href="/login"
-                                                    className="carrinho img-nav"
+                                                    className="carrinho img-nav "
                                                 >
                                                     <img
                                                         src={user_cadastrar}
