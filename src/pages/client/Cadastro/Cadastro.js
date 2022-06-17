@@ -394,8 +394,8 @@ function Cadastro() {
                                             placeholder="(00) 00000-0000"
                                            
                                             required
-                                            minLength="11"
-                                            maxLength="15"
+                                            minLength="14"
+                                            maxLength="14"
                                             id="telefone"
                                             className="formCadInput"
                                             value={celular}
