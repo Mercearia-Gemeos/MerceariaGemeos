@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 
 import { cpfMask } from "../../../components/Maks/cpfMaks";
 import { cepMask } from "../../../components/Maks/cepMaks";
+import { celularMaks } from "../../../components/Maks/celularMaks";
 // Maks
 import "./Cadastro.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -241,6 +242,7 @@ function Cadastro() {
                                             placeholder="xxx.xxx.xxx-xx"
                                             //pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
                                             required
+                                            minLength="14"
                                             maxLength="14"
                                             className="formCadInput"
                                             value={cpfCli}
@@ -390,13 +392,15 @@ function Cadastro() {
                                         </Form.Label>
                                         <Form.Control
                                             placeholder="(00) 00000-0000"
-                                            pattern="\d{0}\(\d{2}\)\d{5}-\d{4}"
+                                           
                                             required
-                                            maxLength="14"
+                                            minLength="11"
+                                            maxLength="15"
                                             id="telefone"
                                             className="formCadInput"
+                                            value={celular}
                                             onChange={(e) => {
-                                                setCelular(e.target.value);
+                                                setCelular(celularMaks(e.target.value));
                                             }}
                                         />
                                         <Form.Control.Feedback type="invalid">
@@ -494,6 +498,7 @@ function Cadastro() {
                                             className="formCadInput"
                                             placeholder="00000-000"
                                             required
+                                            minLength="9"
                                             maxLength="9"
                                             id="cep"
                                             value={cep}
