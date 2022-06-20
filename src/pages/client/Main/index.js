@@ -172,6 +172,13 @@ function Main() {
         }
     };
 
+    let QuantItems = 0
+
+    cartItems.forEach(item => {
+        QuantItems += item.Quantidade
+    });
+
+
     ///////////////////$////////////////////////////$///////////////////////////
 
     ///////////////////*Configurações do Carrousel*////////////////////////////
@@ -303,12 +310,12 @@ function Main() {
 
                                             {/*Nav Link da Imagem do Carrinho do compras*/}
 
-                                            {cartItems.length === 0 &&(
+                                            {QuantItems === 0 &&(
                                                 <div className="Container-right ">
                                                 <Nav.Link
                                                     href="#"
                                                     className="carrinho img-nav2"                                    
-                                                    data-count={cartItems.length}
+                                                    data-count={QuantItems}
                                                 >
                                                     <img
                                                         src={carrinho_compras}
@@ -319,12 +326,12 @@ function Main() {
                                                 </Nav.Link>
                                             </div>
                                             )}
-                                            {cartItems.length !== 0 &&(
+                                            {QuantItems !== 0 &&(
                                                 <div className="Container-right ">
                                                 <Nav.Link
                                                     href="#"
                                                     className="carrinho img-nav2 botaoCarrinho"                                    
-                                                    data-count={cartItems.length}
+                                                    data-count={QuantItems}
                                                 >
                                                     <img
                                                         src={carrinho_compras}
