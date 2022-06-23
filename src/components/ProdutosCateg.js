@@ -129,7 +129,7 @@ function ProdutosCateg(props) {
                     })}
             </InfiniteScroll>
 
-            <div className="EndScrollMsg">
+            <div className="EndScrollMsgCli">
                 <p> Você Chegou ao Fim!</p>
             </div>
         </div>

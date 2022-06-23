@@ -48,6 +48,12 @@
     padding: 0;
 }
 
+.ProdutosCliContent{
+    overflow-x: hidden;
+    width: 1224px;
+    padding: 15px;
+}
+
 /* Cabeçalho de Título do Offcanvas do carrinho */
 
 .MenuLateralCarrinho{

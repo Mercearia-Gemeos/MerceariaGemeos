@@ -1,6 +1,8 @@
 import React from "react";
 //Blibliotecas
 
+import { useWindowScroll } from "react-use";
+
 import {
     Button,
     Navbar,
@@ -44,6 +46,21 @@ import useStore from "../../../hooks/useStore";
 //Hooks
 
 function Main() {
+
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+    function usefilter(item){
+        scrollToTop();
+        setCategName(`${item}`)
+    }
+
+
+    function usefilter2(e){
+        scrollToTop();
+        setFilterValue("0")
+        
+    }
+
     //Dados
 
     const { authCli } = useStore();
@@ -172,12 +189,11 @@ function Main() {
         }
     };
 
-    let QuantItems = 0
+    let QuantItems = 0;
 
-    cartItems.forEach(item => {
-        QuantItems += item.Quantidade
+    cartItems.forEach((item) => {
+        QuantItems += item.Quantidade;
     });
-
 
     ///////////////////$////////////////////////////$///////////////////////////
 
@@ -310,38 +326,46 @@ function Main() {
 
                                             {/*Nav Link da Imagem do Carrinho do compras*/}
 
-                                            {QuantItems === 0 &&(
+                                            {QuantItems === 0 && (
                                                 <div className="Container-right ">
-                                                <Nav.Link
-                                                    href="#"
-                                                    className="carrinho img-nav2"                                    
-                                                    data-count={QuantItems}
-                                                >
-                                                    <img
-                                                        src={carrinho_compras}
-                                                        alt="carrinho de compra"
-                                                        width="50px"
-                                                        onClick={handleShow2}
-                                                    ></img>
-                                                </Nav.Link>
-                                            </div>
+                                                    <Nav.Link
+                                                        href="#"
+                                                        className="carrinho img-nav2"
+                                                        data-count={QuantItems}
+                                                    >
+                                                        <img
+                                                            src={
+                                                                carrinho_compras
+                                                            }
+                                                            alt="carrinho de compra"
+                                                            width="50px"
+                                                            onClick={
+                                                                handleShow2
+                                                            }
+                                                        ></img>
+                                                    </Nav.Link>
+                                                </div>
                                             )}
-                                            {QuantItems !== 0 &&(
+                                            {QuantItems !== 0 && (
                                                 <div className="Container-right ">
-                                                <Nav.Link
-                                                    href="#"
-                                                    className="carrinho img-nav2 botaoCarrinho"                                    
-                                                    data-count={QuantItems}
-                                                >
-                                                    <img
-                                                        src={carrinho_compras}
-                                                        alt="carrinho de compra"
-                                                        width="50px"
-                                                        onClick={handleShow2}
-                                                    ></img>
-                                                </Nav.Link>
-                                            </div>
-                                            )}           
+                                                    <Nav.Link
+                                                        href="#"
+                                                        className="carrinho img-nav2 botaoCarrinho"
+                                                        data-count={QuantItems}
+                                                    >
+                                                        <img
+                                                            src={
+                                                                carrinho_compras
+                                                            }
+                                                            alt="carrinho de compra"
+                                                            width="50px"
+                                                            onClick={
+                                                                handleShow2
+                                                            }
+                                                        ></img>
+                                                    </Nav.Link>
+                                                </div>
+                                            )}
                                             {/* Nav Link do texto do Carrinho do compras*/}
 
                                             <div className="Container-right container-carrinho-margin ">
@@ -435,12 +459,7 @@ function Main() {
                                                         checked={
                                                             filterValue === "0"
                                                         }
-                                                        onClick={(e) =>
-                                                            setFilterValue(
-                                                                (e.currentTarget =
-                                                                    "0")
-                                                            )
-                                                        }
+                                                        onClick={(e) => usefilter2("0")}
                                                     >
                                                         Todos os Produtos
                                                     </ToggleButton>
@@ -473,13 +492,7 @@ function Main() {
                                                                                 .value
                                                                         )
                                                                     }
-                                                                    onClick={(
-                                                                        e
-                                                                    ) =>
-                                                                        setCategName(
-                                                                            `${item.Nome_Categoria}`
-                                                                        )
-                                                                    }
+                                                                    onClick={(e) => usefilter(item.Nome_Categoria)}
                                                                 >
                                                                     {
                                                                         item.Nome_Categoria
@@ -509,11 +522,7 @@ function Main() {
                                         name="radio"
                                         value="0"
                                         checked={filterValue === "0"}
-                                        onClick={(e) =>
-                                            setFilterValue(
-                                                (e.currentTarget = "0")
-                                            )
-                                        }
+                                        onClick={(e) => usefilter2("0")}
                                     >
                                         Todos Os Produtos
                                     </ToggleButton>
@@ -523,6 +532,7 @@ function Main() {
                                             item.Em_Destaque === 1 && (
                                                 <ToggleButton
                                                     key={idx}
+                                                    to="#PedidosDisplay"
                                                     className="TextCategoria-link"
                                                     id={`radio-${idx}`}
                                                     type="radio"
@@ -538,18 +548,15 @@ function Main() {
                                                             e.currentTarget
                                                                 .value
                                                         )
-                                                    }
-                                                    onClick={(e) =>
-                                                        setCategName(
-                                                            `${item.Nome_Categoria}`
-                                                        )
-                                                    }
+                                                    }                                                  
+                                                    onClick={(e) => usefilter(item.Nome_Categoria)}
                                                 >
                                                     {item.Nome_Categoria}
                                                 </ToggleButton>
                                             )
                                     )}
                                 </ButtonGroup>
+                                
                             </div>
                         </nav>
                     </section>
@@ -568,6 +575,7 @@ function Main() {
 
                 <div id="PedidosDisplay">
                     <h1 className="h1Destaque">Ofertas Do Dia</h1>
+                    <button onClick={scrollToTop}>a</button>
                 </div>
                 <div className="Carousel-main">
                     <div className="ofertasContainer">
@@ -592,9 +600,9 @@ function Main() {
                     {/*----/                     Produtos                       \----*/}
                     {/*----/                                                    \----*/}
                     {/*--------------------------------------------------------------*/}
-
+                    <div className="ScrollContent">
                     {filterValue === "0" && (
-                        <div>
+                        <div className="ProdutosCliContent">
                             <h1 className="h1Destaque">Todos Os Produtos</h1>
                             <Produtos
                                 products={products}
@@ -604,7 +612,7 @@ function Main() {
                         </div>
                     )}
                     {filterValue !== "0" && (
-                        <div>
+                        <div className="ProdutosCliContent">
                             <h1 className="h1Destaque">{categName}</h1>
                             <ProdutosCateg
                                 products={products}
@@ -614,6 +622,7 @@ function Main() {
                             ></ProdutosCateg>
                         </div>
                     )}
+                    </div>
 
                     {/*----------------- Offcanvas Carrinho ------------------*/}
 
