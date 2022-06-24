@@ -30,6 +30,7 @@
   "scripts": {
     "start": "concurrently \"cd Server && npm start\" \"react-scripts start\" ",
     "build": "react-scripts build",
+    "build2":"concurrently \"cd Server && npm i && cd.. && npm i\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
