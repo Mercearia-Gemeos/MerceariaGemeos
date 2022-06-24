@@ -575,7 +575,6 @@ function Main() {
 
                 <div id="PedidosDisplay">
                     <h1 className="h1Destaque">Ofertas Do Dia</h1>
-                    <button onClick={scrollToTop}>a</button>
                 </div>
                 <div className="Carousel-main">
                     <div className="ofertasContainer">
