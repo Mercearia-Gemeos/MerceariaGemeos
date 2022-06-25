@@ -1,9 +1,7 @@
 {
     "name": "mercearia-gemeos",
-    "version": "0.1.0",
-    "engines": {
-        "node": "16.14.0"
-    },
+    "version": "0.1.0",  
+    "node": "16.14.0",
     "private": true,
     "dependencies": {
         "@emotion/react": "^11.9.0",
