@@ -32,7 +32,7 @@ function GetPedidoCli() {
     useEffect(() => {
         const getItemPedido = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/itempedido/getItemPedido/${idPedido}`
+                `https://gemeos-server.herokuapp.com/itempedido/getItemPedido/${idPedido}`
             );
             const data = await res.json();
             setItemPedido(data);
@@ -58,7 +58,7 @@ function GetPedidoCli() {
     useEffect(() => {
         const getPedido = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/${idPedido}`
+                `https://gemeos-server.herokuapp.com/pedidos/${idPedido}`
             );
             const data = await res.json();
             setDataPedido(data);

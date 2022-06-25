@@ -43,7 +43,7 @@ function PostBanner() {
         e.preventDefault();
 
         Axios.post(
-            "http://https://gemeos-server.herokuapp.com/:4000/banners",
+            "https://gemeos-server.herokuapp.com/banners",
             {
                 nome: nomeBanner,
                 linkBannerImagem: imagemBanner,
@@ -95,7 +95,7 @@ function PostBanner() {
                                 onClick={abrirModalImg}
                             >
                                 <svg
-                                    xmlns="http://www.w3.org/2000/svg"
+                                    xmlns="https://www.w3.org/2000/svg"
                                     width="80"
                                     height="80"
                                     fill="currentColor"

@@ -31,7 +31,7 @@ function GerProdutos() {
     useEffect(() => {
         const getcateg = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/categorias`
+                `https://gemeos-server.herokuapp.com/categorias`
             );
             const data = await res.json();
             setcategorias(data);

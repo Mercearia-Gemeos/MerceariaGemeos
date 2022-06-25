@@ -42,7 +42,7 @@ function GetPedido() {
     useEffect(() => {
         const getItemPedido = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/itempedido/getItemPedido/${idPedido}`
+                `https://gemeos-server.herokuapp.com/itempedido/getItemPedido/${idPedido}`
             );
             const data = await res.json();
             setItemPedido(data);
@@ -68,7 +68,7 @@ function GetPedido() {
     useEffect(() => {
         const getPedido = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/${idPedido}`
+                `https://gemeos-server.herokuapp.com/pedidos/${idPedido}`
             );
             const data = await res.json();
             setDataPedido(data);
@@ -114,7 +114,7 @@ function GetPedido() {
     const concluirPedido = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/pedidos/concluir",
+            "https://gemeos-server.herokuapp.com/pedidos/concluir",
             {
                 id_pedido: parseInt(idPedido),
             },

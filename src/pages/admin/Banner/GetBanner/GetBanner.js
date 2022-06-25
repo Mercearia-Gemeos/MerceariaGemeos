@@ -33,7 +33,7 @@ function GetBanner(idBanner) {
     useEffect(() => {
         const getBanner = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/Banners/${idBanner}`
+                `https://gemeos-server.herokuapp.com/Banners/${idBanner}`
             );
             const data = await res.json();
             setBanner(data);
@@ -122,7 +122,7 @@ function GetBanner(idBanner) {
 
     const atualizarImgBanner = (e) => {
         e.preventDefault();
-        Axios.patch("http://https://gemeos-server.herokuapp.com/:4000/banners/updateImg", {
+        Axios.patch("https://gemeos-server.herokuapp.com/banners/updateImg", {
             linkBannerImagem: newImagemBanner,
             id_banner: parseInt(idBanner),
         },{
@@ -138,7 +138,7 @@ function GetBanner(idBanner) {
 
     const atualizarNomeBanner = (e) => {
         e.preventDefault();
-        Axios.patch("http://https://gemeos-server.herokuapp.com/:4000/banners/updateNome", {
+        Axios.patch("https://gemeos-server.herokuapp.com/banners/updateNome", {
             nome: newNomeBanner,
             id_banner: parseInt(idBanner),
         },{
@@ -154,7 +154,7 @@ function GetBanner(idBanner) {
 
     const atualizarDescBanner = (e) => {
         e.preventDefault();
-        Axios.patch("http://https://gemeos-server.herokuapp.com/:4000/banners/updateDesc", {
+        Axios.patch("https://gemeos-server.herokuapp.com/banners/updateDesc", {
             descricao: newDescBanner,
             id_banner: parseInt(idBanner),
         },{
@@ -170,7 +170,7 @@ function GetBanner(idBanner) {
 
     const atualizarStatusBanner = (e) => {
         e.preventDefault();
-        Axios.patch("http://https://gemeos-server.herokuapp.com/:4000/banners/updateStatus", {
+        Axios.patch("https://gemeos-server.herokuapp.com/banners/updateStatus", {
             status: newStatus,
             id_banner: parseInt(idBanner),
         },{
@@ -216,7 +216,7 @@ function GetBanner(idBanner) {
                                         onClick={abrirModalImg}
                                     >
                                         <svg
-                                            xmlns="http://www.w3.org/2000/svg"
+                                            xmlns="https://www.w3.org/2000/svg"
                                             width="80"
                                             height="80"
                                             fill="currentColor"

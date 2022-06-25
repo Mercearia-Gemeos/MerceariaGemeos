@@ -32,7 +32,7 @@ function GerCategorias() {
 
     useEffect(() => {
         const getcateg = async () => {
-            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/categorias`);
+            const res = await fetch(`https://gemeos-server.herokuapp.com/categorias`);
             const data = await res.json();
             setcategorias(data);
         };

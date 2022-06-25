@@ -32,7 +32,7 @@ function GerPedidos() {
 
     useEffect(() => {
         const getItens = async () => {
-            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/pedidos`);
+            const res = await fetch(`https://gemeos-server.herokuapp.com/pedidos`);
             const data = await res.json();
             setItems(data);
         };

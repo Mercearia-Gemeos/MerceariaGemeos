@@ -26,7 +26,7 @@ function GerBanner() {
 
     useEffect(() => {
         const getItens = async () => {
-            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/banners`);
+            const res = await fetch(`https://gemeos-server.herokuapp.com/banners`);
             const data = await res.json();
             setBannersDb(data);
         };

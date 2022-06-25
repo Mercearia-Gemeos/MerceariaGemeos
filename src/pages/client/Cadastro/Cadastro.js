@@ -68,7 +68,7 @@ function Cadastro() {
         if (senha !== confSenha) {
             setErrSenha(true);
         } else {
-            Axios.post("http://https://gemeos-server.herokuapp.com/:4000/cliente/cadastrar", {
+            Axios.post("https://gemeos-server.herokuapp.com/cliente/cadastrar", {
                 email,
                 senha,
                 cpfCli,

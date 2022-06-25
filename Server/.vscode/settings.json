@@ -5,7 +5,7 @@
                 "authProtocol": "default"
             },
             "previewLimit": 50,
-            "server": "https://gemeos-server.herokuapp.com/",
+            "server": "gemeos-server.herokuapp.com/",
             "port": 3307,
             "driver": "MySQL",
             "name": "mysql docker",

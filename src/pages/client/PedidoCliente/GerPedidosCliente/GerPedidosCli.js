@@ -34,7 +34,7 @@ function GerPedidosCli() {
     useEffect(() => {
         const getItens = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/cliente/pedidos/${idCli}`
+                `https://gemeos-server.herokuapp.com/cliente/pedidos/${idCli}`
             );
             const data = await res.json();
             setItems(data);

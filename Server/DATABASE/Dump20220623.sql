@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `merceariagemeos` /*!40100 DEFAULT CHARACTER SET 
 USE `merceariagemeos`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: https://gemeos-server.herokuapp.com/    Database: merceariagemeos
+-- Host: gemeos-server.herokuapp.com/    Database: merceariagemeos
 -- ------------------------------------------------------
 -- Server version	8.0.29
 

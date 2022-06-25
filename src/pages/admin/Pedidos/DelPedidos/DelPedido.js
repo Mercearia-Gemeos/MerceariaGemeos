@@ -38,7 +38,7 @@ function DelPedido() {
     useEffect(() => {
         const getPedido = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/${idPedido}`
+                `https://gemeos-server.herokuapp.com/pedidos/${idPedido}`
             );
             const data = await res.json();
             setDataPedido(data);
@@ -87,7 +87,7 @@ function DelPedido() {
 
     const cancelarPedido = (e) => {
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/pedidos/cancelar",
+            "https://gemeos-server.herokuapp.com/pedidos/cancelar",
             {
                 motivoCancelamento: msgCancelamento,
                 id_pedido: parseInt(idPedido)

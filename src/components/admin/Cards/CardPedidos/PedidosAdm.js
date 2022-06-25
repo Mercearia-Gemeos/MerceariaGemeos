@@ -41,7 +41,7 @@ function PedidosAdm(props) {
     useEffect(() => {
         const getItens = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/pedidos?_page=1&_limit=3`,{
+                `https://gemeos-server.herokuapp.com/pedidos?_page=1&_limit=3`,{
                 method: 'GET',
                 headers: new Headers({ 'Authorization': `Bearer ${auth.accessToken}`})
             });
@@ -60,7 +60,7 @@ function PedidosAdm(props) {
 
     const fetchItens = async () => {
         const res = await fetch(
-            `http://https://gemeos-server.herokuapp.com/:4000/pedidos?_page=${page}&_limit=3`
+            `https://gemeos-server.herokuapp.com/pedidos?_page=${page}&_limit=3`
         );
         const data = await res.json();
         return data;

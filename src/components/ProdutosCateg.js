@@ -36,7 +36,7 @@ function ProdutosCateg(props) {
     useEffect(() => {
         const getItens = async () => {
             const res = await fetch(
-                `http://https://gemeos-server.herokuapp.com/:4000/produtos?_page=1&_limit=3`
+                `https://gemeos-server.herokuapp.com/produtos?_page=1&_limit=3`
             );
             const data = await res.json();
             setItems(data);
@@ -53,7 +53,7 @@ function ProdutosCateg(props) {
 
     const fetchItens = async () => {
         const res = await fetch(
-            `http://https://gemeos-server.herokuapp.com/:4000/produtos?_page=${page}&_limit=3`
+            `https://gemeos-server.herokuapp.com/produtos?_page=${page}&_limit=3`
         );
         const data = await res.json();
         return data;

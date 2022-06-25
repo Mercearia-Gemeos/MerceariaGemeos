@@ -62,7 +62,7 @@ function PostProdutos() {
     };
     const cadastarProduto = (e) => {
         Axios.post(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos",
+            "https://gemeos-server.herokuapp.com/produtos",
             {
                 id_categoria: parseInt(idCategoriaProd),
                 nome: nomeProduto,
@@ -95,7 +95,7 @@ function PostProdutos() {
 
     useEffect(() => {
         const getcateg = async () => {
-            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/categorias`);
+            const res = await fetch(`https://gemeos-server.herokuapp.com/categorias`);
             const data = await res.json();
             setcategorias(data);
         };
@@ -153,7 +153,7 @@ function PostProdutos() {
                                     onClick={abrirModalImg}
                                 >
                                     <svg
-                                        xmlns="http://www.w3.org/2000/svg"
+                                        xmlns="https://www.w3.org/2000/svg"
                                         width="80"
                                         height="80"
                                         fill="currentColor"

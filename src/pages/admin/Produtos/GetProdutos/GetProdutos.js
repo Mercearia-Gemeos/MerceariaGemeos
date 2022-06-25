@@ -33,7 +33,7 @@ function GetProdutos(idProd) {
 
     useEffect(() => {
         const getProd = async () => {
-            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/produtos/${idProd}`);
+            const res = await fetch(`https://gemeos-server.herokuapp.com/produtos/${idProd}`);
             const data = await res.json();
             setProduto(data);
         };
@@ -58,7 +58,7 @@ function GetProdutos(idProd) {
 
     useEffect(() => {
         const getcateg = async () => {
-            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/categorias`);
+            const res = await fetch(`https://gemeos-server.herokuapp.com/categorias`);
             const data = await res.json();
             setcategorias(data);
         };
@@ -203,7 +203,7 @@ function GetProdutos(idProd) {
     const atualizarImgProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateImg",
+            "https://gemeos-server.herokuapp.com/produtos/updateImg",
             {
                 linkImagemProduto: newImagemProduto,
                 id_produto: parseInt(idProd),
@@ -223,7 +223,7 @@ function GetProdutos(idProd) {
     const atualizarCategProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateCategoria",
+            "https://gemeos-server.herokuapp.com/produtos/updateCategoria",
             {
                 id_categoria: newIdCategoriaProd,
                 id_produto: parseInt(idProd),
@@ -243,7 +243,7 @@ function GetProdutos(idProd) {
     const atualizarNomeProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateNome",
+            "https://gemeos-server.herokuapp.com/produtos/updateNome",
             {
                 nome: newNomeProduto,
                 id_produto: parseInt(idProd),
@@ -263,7 +263,7 @@ function GetProdutos(idProd) {
     const atualizarDescProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateDesc",
+            "https://gemeos-server.herokuapp.com/produtos/updateDesc",
             {
                 descricao: newDescProduto,
                 id_produto: parseInt(idProd),
@@ -283,7 +283,7 @@ function GetProdutos(idProd) {
     const atualizarPrecoProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateValor",
+            "https://gemeos-server.herokuapp.com/produtos/updateValor",
             {
                 valor: newValorProduto,
                 id_produto: parseInt(idProd),
@@ -303,7 +303,7 @@ function GetProdutos(idProd) {
     const atualizarStatusProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateStatus",
+            "https://gemeos-server.herokuapp.com/produtos/updateStatus",
             {
                 status: newStatus,
                 id_produto: parseInt(idProd),
@@ -323,7 +323,7 @@ function GetProdutos(idProd) {
     const atualizarEmOfertaProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateEmOferta",
+            "https://gemeos-server.herokuapp.com/produtos/updateEmOferta",
             {
                 emOferta: newEmOferta,
                 id_produto: parseInt(idProd),
@@ -343,7 +343,7 @@ function GetProdutos(idProd) {
     const atualizarEmEstoqueProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateEmEstoque",
+            "https://gemeos-server.herokuapp.com/produtos/updateEmEstoque",
             {
                 emEstoque: newEmEstoque,
                 id_produto: parseInt(idProd),

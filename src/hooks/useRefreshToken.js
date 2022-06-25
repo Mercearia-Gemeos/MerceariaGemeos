@@ -9,7 +9,7 @@ const useRefreshToken = () => {
     const { setAuth } = useAuth();
 
     const refresh  = async () => {
-        const response = await axios.get('https://gemeos-server.herokuapp.com/:4000/admin/refresh', {
+        const response = await axios.get('gemeos-server.herokuapp.com/admin/refresh', {
             withCredentials: true,
         });
         setAuth(prev => {
