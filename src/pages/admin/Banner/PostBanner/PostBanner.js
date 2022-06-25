@@ -43,7 +43,7 @@ function PostBanner() {
         e.preventDefault();
 
         Axios.post(
-            "http://localhost:4000/banners",
+            "http://https://gemeos-server.herokuapp.com/:4000/banners",
             {
                 nome: nomeBanner,
                 linkBannerImagem: imagemBanner,

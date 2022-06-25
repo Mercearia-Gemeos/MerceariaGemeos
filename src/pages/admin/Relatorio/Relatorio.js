@@ -61,7 +61,7 @@ function Relatorio() {
 
     useEffect(() => {
         const getprodutos = async () => {
-            const res = await fetch(`http://localhost:4000/produtos`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/produtos`);
             const data = await res.json();
             setprodutos(data);
         };
@@ -86,7 +86,7 @@ function Relatorio() {
 
     useEffect(() => {
         const getcateg = async () => {
-            const res = await fetch(`http://localhost:4000/categorias`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/categorias`);
             const data = await res.json();
             setcategorias(data);
         };
@@ -111,7 +111,7 @@ function Relatorio() {
 
     useEffect(() => {
         const getItens = async () => {
-            const res = await fetch(`http://localhost:4000/banners`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/banners`);
             const data = await res.json();
             setBannersDb(data);
         };
@@ -133,7 +133,7 @@ function Relatorio() {
 
     useEffect(() => {
         const getmaisVendidos = async () => {
-            const res = await fetch(`http://localhost:4000/admin/maisVendidos`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/admin/maisVendidos`);
             const data = await res.json();
             setMaisVendidos(data);
         };
@@ -180,7 +180,7 @@ function Relatorio() {
     useEffect(() => {
         const getnumberPedidosAndamento = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/quantidadeAndamento`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/quantidadeAndamento`
             );
             const data = await res.json();
             setNumberPedidosAndamento(data);
@@ -196,7 +196,7 @@ function Relatorio() {
     useEffect(() => {
         const getnumberPedidosConcluido = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/quantidadeConcluido`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/quantidadeConcluido`
             );
             const data = await res.json();
             setNumberPedidosConcluido(data);
@@ -212,7 +212,7 @@ function Relatorio() {
     useEffect(() => {
         const getnumberPedidosCancelado = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/quantidadeCancelado`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/quantidadeCancelado`
             );
             const data = await res.json();
             setNumberPedidosCancelado(data);
@@ -226,7 +226,7 @@ function Relatorio() {
     useEffect(() => {
         const getpedidosDia = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/PedidosDia/${ano}/${mes}/${dia}`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/PedidosDia/${ano}/${mes}/${dia}`
             );
             const data = await res.json();
             setNumberPedidosDia(data);
@@ -240,7 +240,7 @@ function Relatorio() {
     useEffect(() => {
         const getpedidosMes = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/PedidosMes/${ano}/${mes}`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/PedidosMes/${ano}/${mes}`
             );
             const data = await res.json();
             setNumberPedidosMes(data);
@@ -254,7 +254,7 @@ function Relatorio() {
     useEffect(() => {
         const getganhosTotais = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/GanhosTotais`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/GanhosTotais`
             );
             const data = await res.json();
             setGanhosTotais(data);
@@ -268,7 +268,7 @@ function Relatorio() {
     useEffect(() => {
         const getganhosMes = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/GanhosMes/${ano}/${mes}`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/GanhosMes/${ano}/${mes}`
             );
             const data = await res.json();
             setGanhosMes(data);
@@ -282,7 +282,7 @@ function Relatorio() {
     useEffect(() => {
         const getganhosDia = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/GanhosDia/${ano}/${mes}/${dia}`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/GanhosDia/${ano}/${mes}/${dia}`
             );
             const data = await res.json();
             setGanhosDia(data);
@@ -296,7 +296,7 @@ function Relatorio() {
     useEffect(() => {
         const getquantidadeVendas = async () => {
             const res = await fetch(
-                `http://localhost:4000/admin/quantidadeVendas`
+                `http://https://gemeos-server.herokuapp.com/:4000/admin/quantidadeVendas`
             );
             const data = await res.json();
             setNumberVendasTotal(data);
@@ -310,7 +310,7 @@ function Relatorio() {
     useEffect(() => {
         const getquantidadeVendasDia = async () => {
             const res = await fetch(
-                `http://localhost:4000/admin/quantidadeVendasDia/${ano}/${mes}/${dia}`
+                `http://https://gemeos-server.herokuapp.com/:4000/admin/quantidadeVendasDia/${ano}/${mes}/${dia}`
             );
             const data = await res.json();
             setNumberVendasDia(data);
@@ -324,7 +324,7 @@ function Relatorio() {
     useEffect(() => {
         const getquantidadeVendasMes = async () => {
             const res = await fetch(
-                `http://localhost:4000/admin/quantidadeVendasMes/${ano}/${mes}`
+                `http://https://gemeos-server.herokuapp.com/:4000/admin/quantidadeVendasMes/${ano}/${mes}`
             );
             const data = await res.json();
             setNumberVendasMes(data);
@@ -412,7 +412,7 @@ function Relatorio() {
     useEffect(() => {
         const getpedidosData = async () => {
             const res = await fetch(
-                `http://localhost:4000/admin/pedidosData/${anoI}/${mesI}/${diaI}/${anoL}/${mesL}/${diaL}`
+                `http://https://gemeos-server.herokuapp.com/:4000/admin/pedidosData/${anoI}/${mesI}/${diaI}/${anoL}/${mesL}/${diaL}`
             );
             const data = await res.json();
             setPedidosData(data);

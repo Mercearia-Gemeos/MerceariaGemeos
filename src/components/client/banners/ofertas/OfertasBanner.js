@@ -25,7 +25,7 @@ function OfertasBanner() {
     useEffect(() => {
         const getItens = async () => {
             const res = await fetch(
-                `http://localhost:4000/banners`
+                `http://https://gemeos-server.herokuapp.com/:4000/banners`
             );
             const data = await res.json();
             setBannersDb(data);

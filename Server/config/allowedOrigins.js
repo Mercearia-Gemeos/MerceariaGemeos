@@ -1,7 +1,7 @@
 const allowedOrigins = [
 
-    'http://localhost:4000',
-    'http://localhost:3000'
+    'http://https://gemeos-server.herokuapp.com/:4000',
+    'http://https://gemeos-server.herokuapp.com/:3000'
 
 ];
 

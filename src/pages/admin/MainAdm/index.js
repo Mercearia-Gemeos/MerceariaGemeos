@@ -70,7 +70,7 @@ function MainAdm() {
     useEffect(() => {
         const getnumberProdutos = async () => {
             const res = await fetch(
-                `http://localhost:4000/produtos/quantidade`
+                `http://https://gemeos-server.herokuapp.com/:4000/produtos/quantidade`
             );
             const data = await res.json();
             setNumberProdutos(data);
@@ -86,7 +86,7 @@ function MainAdm() {
     useEffect(() => {
         const getnumberCategorias = async () => {
             const res = await fetch(
-                `http://localhost:4000/categorias/quantidade`
+                `http://https://gemeos-server.herokuapp.com/:4000/categorias/quantidade`
             );
             const data = await res.json();
             setNumberCategorias(data);
@@ -101,7 +101,7 @@ function MainAdm() {
 
     useEffect(() => {
         const getnumberBanners = async () => {
-            const res = await fetch(`http://localhost:4000/banners/quantidade`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/banners/quantidade`);
             const data = await res.json();
             setNumberBanners(data);
         };
@@ -116,7 +116,7 @@ function MainAdm() {
     useEffect(() => {
         const getnumberPedidosAndamento = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/quantidadeAndamento`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/quantidadeAndamento`
             );
             const data = await res.json();
             setNumberPedidosAndamento(data);
@@ -132,7 +132,7 @@ function MainAdm() {
     useEffect(() => {
         const getnumberPedidosConcluido = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/quantidadeConcluido`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/quantidadeConcluido`
             );
             const data = await res.json();
             setNumberPedidosConcluido(data);
@@ -148,7 +148,7 @@ function MainAdm() {
     useEffect(() => {
         const getnumberPedidosCancelado = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/quantidadeCancelado`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/quantidadeCancelado`
             );
             const data = await res.json();
             setNumberPedidosCancelado(data);
@@ -162,7 +162,7 @@ function MainAdm() {
     useEffect(() => {
         const getnumberClientes = async () => {
             const res = await fetch(
-                `http://localhost:4000/admin/quantidadeCliente`
+                `http://https://gemeos-server.herokuapp.com/:4000/admin/quantidadeCliente`
             );
             const data = await res.json();
             setNumberClientes(data);
@@ -176,7 +176,7 @@ function MainAdm() {
     useEffect(() => {
         const getganhosTotais = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/GanhosTotais`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/GanhosTotais`
             );
             const data = await res.json();
             setGanhosTotais(data);
@@ -190,7 +190,7 @@ function MainAdm() {
     useEffect(() => {
         const getganhosMes = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/GanhosMes/${ano}/${mes}`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/GanhosMes/${ano}/${mes}`
             );
             const data = await res.json();
             setGanhosMes(data);
@@ -204,7 +204,7 @@ function MainAdm() {
     useEffect(() => {
         const getganhosDia = async () => {
             const res = await fetch(
-                `http://localhost:4000/pedidos/GanhosDia/${ano}/${mes}/${dia}`
+                `http://https://gemeos-server.herokuapp.com/:4000/pedidos/GanhosDia/${ano}/${mes}/${dia}`
             );
             const data = await res.json();
             setGanhosDia(data);

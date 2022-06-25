@@ -47,7 +47,7 @@ function PedidoCliente() {
     //--------------------------------------------------------------//
 
     const cadastrarItemPedido = (FuncIdProd, FuncValor, FuncQuant) => {
-        Axios.post("http://localhost:4000/itemPedido", {
+        Axios.post("http://https://gemeos-server.herokuapp.com/:4000/itemPedido", {
             id_pedido: idPedido,
             id_produto: FuncIdProd,
             valor: FuncValor,
@@ -58,7 +58,7 @@ function PedidoCliente() {
     };
 
     const cadastrarPedido = (e) => {
-        Axios.post("http://localhost:4000/pedidos", {
+        Axios.post("http://https://gemeos-server.herokuapp.com/:4000/pedidos", {
             id_Cli: idCli,
             formaPagamento: formaPagamento,
             observacao: `${observacaoPedido}`,

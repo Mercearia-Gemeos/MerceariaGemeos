@@ -3,7 +3,7 @@
         "MYSQL_USER" : "root",
         "MYSQL_PASSWORD" : "root",
         "MYSQL_DATABASE" : "merceariagemeos",
-        "MYSQL_HOST" : "localhost",
+        "MYSQL_HOST" : "https://gemeos-server.herokuapp.com/",
         "MYSQL_PORT" : 3306,
 
 

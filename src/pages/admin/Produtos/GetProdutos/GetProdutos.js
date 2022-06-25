@@ -33,7 +33,7 @@ function GetProdutos(idProd) {
 
     useEffect(() => {
         const getProd = async () => {
-            const res = await fetch(`http://localhost:4000/produtos/${idProd}`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/produtos/${idProd}`);
             const data = await res.json();
             setProduto(data);
         };
@@ -58,7 +58,7 @@ function GetProdutos(idProd) {
 
     useEffect(() => {
         const getcateg = async () => {
-            const res = await fetch(`http://localhost:4000/categorias`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/categorias`);
             const data = await res.json();
             setcategorias(data);
         };
@@ -203,7 +203,7 @@ function GetProdutos(idProd) {
     const atualizarImgProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateImg",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateImg",
             {
                 linkImagemProduto: newImagemProduto,
                 id_produto: parseInt(idProd),
@@ -223,7 +223,7 @@ function GetProdutos(idProd) {
     const atualizarCategProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateCategoria",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateCategoria",
             {
                 id_categoria: newIdCategoriaProd,
                 id_produto: parseInt(idProd),
@@ -243,7 +243,7 @@ function GetProdutos(idProd) {
     const atualizarNomeProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateNome",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateNome",
             {
                 nome: newNomeProduto,
                 id_produto: parseInt(idProd),
@@ -263,7 +263,7 @@ function GetProdutos(idProd) {
     const atualizarDescProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateDesc",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateDesc",
             {
                 descricao: newDescProduto,
                 id_produto: parseInt(idProd),
@@ -283,7 +283,7 @@ function GetProdutos(idProd) {
     const atualizarPrecoProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateValor",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateValor",
             {
                 valor: newValorProduto,
                 id_produto: parseInt(idProd),
@@ -303,7 +303,7 @@ function GetProdutos(idProd) {
     const atualizarStatusProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateStatus",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateStatus",
             {
                 status: newStatus,
                 id_produto: parseInt(idProd),
@@ -323,7 +323,7 @@ function GetProdutos(idProd) {
     const atualizarEmOfertaProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateEmOferta",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateEmOferta",
             {
                 emOferta: newEmOferta,
                 id_produto: parseInt(idProd),
@@ -343,7 +343,7 @@ function GetProdutos(idProd) {
     const atualizarEmEstoqueProduto = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/produtos/updateEmEstoque",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos/updateEmEstoque",
             {
                 emEstoque: newEmEstoque,
                 id_produto: parseInt(idProd),

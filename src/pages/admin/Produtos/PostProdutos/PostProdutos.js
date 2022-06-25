@@ -62,7 +62,7 @@ function PostProdutos() {
     };
     const cadastarProduto = (e) => {
         Axios.post(
-            "http://localhost:4000/produtos",
+            "http://https://gemeos-server.herokuapp.com/:4000/produtos",
             {
                 id_categoria: parseInt(idCategoriaProd),
                 nome: nomeProduto,
@@ -95,7 +95,7 @@ function PostProdutos() {
 
     useEffect(() => {
         const getcateg = async () => {
-            const res = await fetch(`http://localhost:4000/categorias`);
+            const res = await fetch(`http://https://gemeos-server.herokuapp.com/:4000/categorias`);
             const data = await res.json();
             setcategorias(data);
         };

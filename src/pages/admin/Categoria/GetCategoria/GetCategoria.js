@@ -35,7 +35,7 @@ function GetCategoria(idCateg) {
     useEffect(() => {
         const getcateg = async () => {
             const res = await fetch(
-                `http://localhost:4000/categorias/${idCateg}`
+                `http://https://gemeos-server.herokuapp.com/:4000/categorias/${idCateg}`
             );
             const data = await res.json();
             setcategoria(data);
@@ -96,7 +96,7 @@ function GetCategoria(idCateg) {
     const atualizarNomeCategoria = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/categorias/updateName",
+            "http://https://gemeos-server.herokuapp.com/:4000/categorias/updateName",
             {
                 nome: newNomeCategoria,
                 id_categoria: parseInt(idCateg),
@@ -116,7 +116,7 @@ function GetCategoria(idCateg) {
     const atualizarEmDestaqueCategoria = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/categorias/updateEmDestaque",
+            "http://https://gemeos-server.herokuapp.com/:4000/categorias/updateEmDestaque",
             {
                 emDestaque: parseInt(newEmDestaque),
                 id_categoria: parseInt(idCateg),
@@ -136,7 +136,7 @@ function GetCategoria(idCateg) {
     const atualizarStatusCategoria = (e) => {
         e.preventDefault();
         Axios.patch(
-            "http://localhost:4000/categorias/updateStatus",
+            "http://https://gemeos-server.herokuapp.com/:4000/categorias/updateStatus",
             {
                 status: newStatus,
                 id_categoria: parseInt(idCateg),

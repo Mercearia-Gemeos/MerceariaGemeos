@@ -2,5 +2,5 @@ import axios from 'axios';
 //Axios
 
 export default axios.create({
-    baseURL: 'http://localhost:4000'
+    baseURL: 'http://https://gemeos-server.herokuapp.com/:4000'
 });

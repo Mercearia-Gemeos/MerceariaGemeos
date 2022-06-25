@@ -37,7 +37,7 @@ function PostCategoria() {
 
     const cadastrarCategoria = (e) => {
         Axios.post(
-            "http://localhost:4000/categorias",
+            "http://https://gemeos-server.herokuapp.com/:4000/categorias",
             {
                 nome: nomeCategoria,
                 emDestaque: emDestaque,
